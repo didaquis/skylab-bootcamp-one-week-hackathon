@@ -1,0 +1,100 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color:black;
+}
+
+header{
+  height: 20%;
+  background-image: url('../img/concert_header.png');
+  margin-bottom: 3px;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center; */
+}
+
+h1{
+  -webkit-text-fill-color:  black;
+  -webkit-text-stroke: 1px yellow;
+  padding: 2%;
+  float: left;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2, h4{
+  color: white; 
+}
+
+h3{
+  -webkit-text-fill-color:  black;
+  -webkit-text-stroke: 1px yellow;
+  padding: 1%;
+  float: right;
+  font-weight: bolder;
+}
+
+.searchbar{
+text-align: center;
+}
+
+button,input{
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  font-weight: bolder !important;
+  border: 1px solid black !important; 
+  margin-top: 5px;
+}
+
+.results, .home{
+  background-image: url('../img/concert_results.jpg');
+  background-size: cover;
+  margin-top: 10px;
+  height: 70%;
+  width: 98%;
+  border-radius: 10px;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center; */
+}
+
+ul{
+  padding: 5%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.description{
+  height: 30%;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.imgpromo{
+  height: 70%;
+}
+
+.colimgpromo1{
+  background-image: url('../img/music.jpeg');
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.colimgpromo2{
+  background-image: url('../img/sports.jpeg');
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.colimgpromo3{
+  background-image: url('../img/theater.jpeg');
+  background-size: cover;
+  border-radius: 10px;
+}
