@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<script src="ticketmaster-api-0.2.js"></script>
+		<script src="ticketmaster-api-0.3.js"></script>
 		<title>test básico</title>
 </head>
 <body>
@@ -19,16 +19,20 @@
 		}
 
 
-
-
 		// Ejemplo de búsqueda por ciudad española:
-		//ticketmasterApi.searchEventsOnASpecificSpanishCity('Barcelona').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
-
-
+		//ticketmasterApi.searchEventsOnASpanishCity('Barcelona').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
 
 
 		//Ejemplo de búsqueda por ciudad española y eventos de tipo musical:
-		ticketmasterApi.searchEventsOnASpecificSpanishCityAndSpecificSegmentName('Madrid', 'Music').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+		//ticketmasterApi.searchEventsOnASpanishCityAndSegmentName('Madrid', 'Music').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+		
+
+		//Ejemplo de búsqueda por ciudad española y palabra clave:
+		//ticketmasterApi.searchEventsOnASpanishCityAndKeyword('Madrid', 'U2').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+
+
+		//Ejemplo de búsqueda por ciudad española y palabra clave:
+		ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword('Madrid', 'Music', 'U2').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
 
 	</script>
 </body>

@@ -13,14 +13,10 @@ Miscellaneous    	KZFzniwnSyZfZ7v7n1
 
 
 
-
-
-
-
 /**
  * TicketMaster API client.
  * 
- * @version 0.2
+ * @version 0.3
  */
 let ticketmasterApi
 (() => {
@@ -48,7 +44,7 @@ let ticketmasterApi
 		 * @returns {Promise<Response>} Data received from endpoint.
 		 * @throws {String} If something go wrong.
 		 */
-		searchEventsOnASpecificSpanishCity: (city) => {
+		searchEventsOnASpanishCity: (city) => {
 			return call(`events?city=${city}&countryCode=ES`).then(res => res)
 		},
 
@@ -60,8 +56,33 @@ let ticketmasterApi
 		 * @returns {Promise<Response>} Data received from endpoint.
 		 * @throws {String} If something go wrong.
 		 */
-		searchEventsOnASpecificSpanishCityAndSpecificSegmentName: (city, segmentName) => {
+		searchEventsOnASpanishCityAndSegmentName: (city, segmentName) => {
 			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}`).then(res => res)
+		},
+
+		/**
+		 * Search events on a specific spanish city and keyword.
+		 *
+		 * @param {String} city - City to search.
+		 * @param {String} keyword - keyword to search.
+		 * @returns {Promise<Response>} Data received from endpoint.
+		 * @throws {String} If something go wrong.
+		 */
+		searchEventsOnASpanishCityAndKeyword: (city, keyword) => {
+			return call(`events?city=${city}&countryCode=ES&keyword=${keyword}`).then(res => res)
+		},
+
+		/**
+		 * Search events on a specific spanish city and specific segment name of events and keyword.
+		 *
+		 * @param {String} city - City to search.
+		 * @param {String} segmentName - segment name of event to search.
+		 * @param {String} keyword - keyword to search.
+		 * @returns {Promise<Response>} Data received from endpoint.
+		 * @throws {String} If something go wrong.
+		 */
+		searchEventsOnASpanishCityAndSegmentNameAndKeyword: (city, segmentName, keyword) => {
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}`).then(res => res)
 		}
 	}
 
