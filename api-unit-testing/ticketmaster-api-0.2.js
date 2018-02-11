@@ -1,25 +1,6 @@
 /*
 # Referencia para desarrollo de la api:
 
-Obtener los eventos de una ciudad
-https://app.ticketmaster.com/discovery/v2/events
-&city=barcelona
-?apikey=ECkj2ALmZaqNovI8BTDpOZ3NCuAUMQJc
-
-
-https://app.ticketmaster.com/discovery/v2/events.json
-?classificationName=music
-&dmaId=324
-&apikey=ECkj2ALmZaqNovI8BTDpOZ3NCuAUMQJc
- 
-
-https://app.ticketmaster.com/discovery/v2/events
-?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0
-&sort=date,asc
-&city=Barcelona
-&countryCode=ES
-
-
 segmentName  ----- 	segmentId
 NAME    			ID
 Music    			KZFzniwnSyZfZ7v7nJ
@@ -28,13 +9,7 @@ Arts & Theatre    	KZFzniwnSyZfZ7v7na
 Film    			KZFzniwnSyZfZ7v7nn
 Miscellaneous    	KZFzniwnSyZfZ7v7n1
 
-
-https://app.ticketmaster.com/discovery/v2/events
-?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0
-&city=barcelona
-&countryCode=ES
-&segmentName=Film
- */
+*/
 
 
 
@@ -45,7 +20,7 @@ https://app.ticketmaster.com/discovery/v2/events
 /**
  * TicketMaster API client.
  * 
- * @version 0.1
+ * @version 0.2
  */
 let ticketmasterApi
 (() => {
@@ -61,16 +36,8 @@ let ticketmasterApi
 	function call(url) {
 		const token = "7elxdku9GGG5k8j0Xm8KWdANDgecHMV0";
 		const baseUrl = "https://app.ticketmaster.com/discovery/v2/";
-		return fetch(`${baseUrl}?${url}&apikey=${token}`)
-			.then(res => {
-				if(res.status === 200){
-					return res.json();
-				}else{
-					console.error(`Error code: ${res.status}`);
-					console.error(`Error status: ${res.statusText}`);
-					throw new Error(res.statusText);
-				}
-			});
+		return fetch(`${baseUrl}${url}&apikey=${token}`)
+			.then( res => { return res.json() } );
 	}
 
 	const inst = {
@@ -82,7 +49,7 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpecificSpanishCity: (city) => {
-			return call(`city=${city}&countryCode=ES`).then(res => res)
+			return call(`events?city=${city}&countryCode=ES`).then(res => res)
 		},
 
 		/**
@@ -94,7 +61,7 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpecificSpanishCityAndSpecificSegmentName: (city, segmentName) => {
-			return call(`city=${city}&countryCode=ES&segmentName=${segmentName}`).then(res => res)
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}`).then(res => res)
 		}
 	}
 

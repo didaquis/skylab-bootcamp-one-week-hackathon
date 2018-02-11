@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src="ticketmaster-api-0.2.js"></script>
+		<title>test básico</title>
+</head>
+<body>
+	<h1>Testeo rápido de la API (consulta la consola)</h1>
+	<script type="text/javascript">
+
+		function handlerDataReceived(res){
+			/* Recorrer los resultados obtenidos */
+			for(let i = 0; i < res.length; i++){
+				console.log(res[i])
+			}
+		}
+
+
+
+
+		// Ejemplo de búsqueda por ciudad española:
+		//ticketmasterApi.searchEventsOnASpecificSpanishCity('Barcelona').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+
+
+
+
+		//Ejemplo de búsqueda por ciudad española y eventos de tipo musical:
+		ticketmasterApi.searchEventsOnASpecificSpanishCityAndSpecificSegmentName('Madrid', 'Music').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+
+	</script>
+</body>
+</html>
