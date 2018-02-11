@@ -1,22 +1,7 @@
-/*
-# Referencia para desarrollo de la api:
-
-segmentName  ----- 	segmentId
-NAME    			ID
-Music    			KZFzniwnSyZfZ7v7nJ
-Sports    			KZFzniwnSyZfZ7v7nE
-Arts & Theatre    	KZFzniwnSyZfZ7v7na
-Film    			KZFzniwnSyZfZ7v7nn
-Miscellaneous    	KZFzniwnSyZfZ7v7n1
-
-*/
-
-
-
 /**
  * TicketMaster API client.
  * 
- * @version 0.3
+ * @version 0.4
  */
 let ticketmasterApi
 (() => {
@@ -83,6 +68,17 @@ let ticketmasterApi
 		 */
 		searchEventsOnASpanishCityAndSegmentNameAndKeyword: (city, segmentName, keyword) => {
 			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}`).then(res => res)
+		},
+
+		/**
+		 * Search details of event.
+		 *
+		 * @param {String} idOfEvent - Identifier of event.
+		 * @returns {Promise<Response>} Data received from endpoint.
+		 * @throws {String} If something go wrong.
+		 */
+		searchEventsDetails: (idOfEvent) => {
+			return call(`events?id=${idOfEvent}`).then(res => res)
 		}
 	}
 
