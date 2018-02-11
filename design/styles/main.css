@@ -9,12 +9,6 @@ html,body{
 header{
   height: 20%;
   background-image: url('../img/concert_header.png');
-  margin-bottom: 3px;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center; */
 }
 
 h1{
@@ -27,7 +21,7 @@ h1{
 }
 
 h2, h4{
-  color: white; 
+  color: black; 
 }
 
 h3{
@@ -52,17 +46,13 @@ button,input{
 }
 
 .results, .home{
-  background-image: url('../img/concert_results.jpg');
+  /* background-image: linear-gradient(to bottom, rgba(250,189,7,0.5), rgba(250,189,7,0)), url('../img/concert_results.jpg'); */
+  background-image: linear-gradient(to bottom, rgba(250,189,7,1), rgba(250,189,7,0));
   background-size: cover;
   margin-top: 10px;
   height: 70%;
   width: 98%;
   border-radius: 10px;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center; */
 }
 
 ul{
