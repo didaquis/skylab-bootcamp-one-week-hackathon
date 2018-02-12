@@ -14,9 +14,10 @@
 <body>
         <!-- Header -->
         <header class="container-fluid d-none d-sm-block">
-                <h1 class="d-none d-lg-block">Tiki Ticket</h1>
-                <h3 class="d-none d-lg-block">Tiki is the ancient
-                                <br/>event finder</h3>
+                <div class="row">
+                        <div class="d-none d-sm-block col-lg-9"><h1>Tiki Ticket</h1></div>
+                        <div class="d-none d-lg-block col-lg-3"><h3>Tiki is the ancient<br/>event finder</h3></div>
+                </div>
         </header>
 
         <!-- Searchbar -->
@@ -32,10 +33,8 @@
                                         <a class="dropdown-item" href="#">Valencia</a>
                                         <a class="dropdown-item" href="#">Bilbao</a>
                                         <a class="dropdown-item" href="#">Zaragoza</a>
-
                                 </div>
                         </div>
-
                         <div class="col-sm-3">
                                 <button type="button" class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         What?
@@ -47,78 +46,55 @@
                                         <a class="dropdown-item" href="#">Others</a>
                                 </div>
                         </div>
-
                         <div class="col-sm-3">
                                 <input type="text" placeholder="Try it...">
                         </div>
-
                         <div class="col-sm-3">
                                 <button type="button" class="btn btn-warning">GO</button>
                         </div>
-
+                </div>
         </section>
-
-
         <!-- Home -->
         <section class="container-fluid home">
-        
-
                 <div class="row imgpromo">
-                        <div class="col-sm-4 d-none d-sm-block">
-                                <!-- <div class="colimgpromo1"></div> -->
-
+                        <div class="col-sm-6 col-md-4">
                                 <div class="flip-container">
-
                                         <div class="flipper">
-                                                <div class="front colimgpromo1 pointer">
-                                                        
-
-
-                                                </div>
+                                                <div class="front colimgpromo1 pointer"></div>
                                                 <div class="back colimgpromo1-back">
-                                                        <h2>Select your city and press <span class="go-text">GO</span> button to obtain lots of events around you!<br><br>
-                                                                        If you are interested in live music shows, select music on What list!</h2>
-
+                                                        <h2>Select your city and press
+                                                                <span class="go-text">GO</span> button to obtain lots of events around you!
+                                                                <br>
+                                                                <br> If you are interested in live music shows, select music
+                                                                on What list!</h2>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
-                        <div class="col-sm-4 d-none d-sm-block">
-                                <!-- <div class="colimgpromo2"></div> -->
+                        <div class="col-sm-6 col-md-4">
                                 <div class="flip-container">
                                         <div class="flipper">
-                                                <div class="front colimgpromo2 pointer">
-                                                        
-
-
-                                                </div>
+                                                <div class="front colimgpromo2 pointer"></div>
                                                 <div class="back colimgpromo2-back">
                                                         <h2>If you like sports, prove you are a true fan and go to the stadium!</h2>
-
                                                 </div>
                                         </div>
                                 </div>
                         </div>
-                        <div class="col-sm-4 d-none d-sm-block">
+                        <div class="col-sm-6 col-md-4">
                                 <!-- <div class="colimgpromo3"></div> -->
                                 <div class="flip-container">
                                         <div class="flipper">
-                                                <div class="front colimgpromo3 pointer">
-                                                        
-
-
-                                                </div>
+                                                <div class="front colimgpromo3 pointer"></div>
                                                 <div class="back colimgpromo3-back">
-                                                                <h2>To be, or not to be? This is the Tiki question. Sounds familiar? oh boy… You should go to the theater more often!</h2>
-
+                                                        <h2>To be, or not to be? This is the Tiki question. Sounds familiar?
+                                                                oh boy… You should go to the theater more often!</h2>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
                 </div>
-
         </section>
-
         <script src="vendor/jquery/3.3.1/jquery-3.3.1.slim.min.js"></script>
         <script src="vendor/popper/1.12.9/popper.min.js"></script>
         <script src="vendor/bootstrap/4.0.0/js/bootstrap.min.js"></script>

@@ -7,24 +7,28 @@ html,body{
   margin: 0;
   padding: 0;
   height: 100%;
-  /* font-family: 'Roboto', sans-serif; */
-  background-color:black;
+}
+body {
+  background-image: url('../img/beach.jpg');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
 }
 
 header{
+  margin-top: 5px;
   height: 120px;
   background-image: url('../img/tiki_logo.svg');
-  border-top: 6px solid black;
+  background-position: left;
+  background-repeat: no-repeat;
   font-family: "bamboo";
 }
-
 h1{
   color: #6af630;
-  float: left;
-  font-size: 120px;
-  line-height: 75px;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  
+  margin: 0;
+  font-size: 85px;
+  margin-top: -15px;
+  margin-left: 100px;
 }
 
 h2{
@@ -44,6 +48,7 @@ h3{
   font-weight: bolder;
   color: #6af630;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-top: 14px;
 }
 
 .searchbar{
@@ -61,13 +66,14 @@ button,input{
 
 input{
   padding-left: 8px;
+  border-radius: 5px;
+}
+.btn-warning {
+  background-color: #ffeeba;
 }
 
 .results, .home{
-  background-image: linear-gradient(to bottom, rgba(250,189,7,1), rgba(250,189,7,0));
-  background-size: cover;
   margin-top: 10px;
-  height: 100%;
   width: 98%;
   border-radius: 10px;
 }
@@ -178,7 +184,10 @@ ul{
   padding-bottom: 0;
 }
 
-
 .event-box p{
   margin-bottom: 4px;
+}
+
+.badge-warning {
+  font-size: 100%;
 }
