@@ -1,35 +1,48 @@
+@font-face{
+  font-family: "bamboo";
+  src: url('../resources/bamboo.ttf')
+}
+
 html,body{
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   background-color:black;
 }
 
 header{
-  height: 20%;
-  background-image: url('../img/concert_header.png');
+  height: 120px;
+  background-image: url('../img/tiki_logo.svg');
+  border-top: 6px solid black;
+  font-family: "bamboo";
 }
 
 h1{
-  -webkit-text-fill-color:  black;
-  -webkit-text-stroke: 1px yellow;
-  padding: 2%;
+  color: #6af630;
   float: left;
-  font-weight: bolder;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 120px;
+  line-height: 75px;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  
 }
 
-h2, h4{
+h2{
   color: black; 
+  margin-top: 50px;
+}
+
+.go-text{
+  font-weight: bolder;
+  background: #F4B807;
 }
 
 h3{
-  -webkit-text-fill-color:  black;
-  -webkit-text-stroke: 1px yellow;
   padding: 1%;
   float: right;
   font-weight: bolder;
+  color: #6af630;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .searchbar{
@@ -45,12 +58,15 @@ button,input{
   margin-top: 5px;
 }
 
+input{
+  padding-left: 8px;
+}
+
 .results, .home{
-  /* background-image: linear-gradient(to bottom, rgba(250,189,7,0.5), rgba(250,189,7,0)), url('../img/concert_results.jpg'); */
   background-image: linear-gradient(to bottom, rgba(250,189,7,1), rgba(250,189,7,0));
   background-size: cover;
   margin-top: 10px;
-  height: 70%;
+  height: 100%;
   width: 98%;
   border-radius: 10px;
 }
@@ -67,24 +83,86 @@ ul{
   padding: 20px;
 }
 
-.imgpromo{
-  height: 70%;
-}
 
 .colimgpromo1{
-  background-image: url('../img/music.jpeg');
-  background-size: cover;
-  border-radius: 10px;
+  background-image: url('../img/music.jpeg');  
+}
+
+.colimgpromo1-back{
+  background-image: url('../img/music_back.jpg');
 }
 
 .colimgpromo2{
   background-image: url('../img/sports.jpeg');
-  background-size: cover;
-  border-radius: 10px;
+}
+
+.colimgpromo2-back{
+  background-image: url('../img/sports_back.jpg');
 }
 
 .colimgpromo3{
   background-image: url('../img/theater.jpeg');
+}
+
+.colimgpromo3-back{
+  background-image: url('../img/theater_back.jpg');
+}
+
+.colimgpromo1, .colimgpromo1-back, .colimgpromo2,.colimgpromo2-back,.colimgpromo3, .colimgpromo3-back{
+  margin-top:5px;
+  height: 100%;
+  background-position: center;
   background-size: cover;
   border-radius: 10px;
+  text-align: center;
 }
+
+
+/* FLIP START */
+
+
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+    transform: rotateY(0deg);
+    
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+    
+}
+
+
+/* FLIP END */
