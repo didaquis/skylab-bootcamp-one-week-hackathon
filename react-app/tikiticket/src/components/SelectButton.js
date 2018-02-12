@@ -8,7 +8,7 @@ function SelectButton(props){
 			</button>
 			<div className="dropdown-menu">
 				{
-					props.dataForOptions.map(
+					props.dataForComponent.map(
 						(option) => {
 							return ( <a className="dropdown-item" key={option.identifier} href="#">{option.text}</a> )
 						}

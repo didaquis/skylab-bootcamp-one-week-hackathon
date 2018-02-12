@@ -6,14 +6,14 @@ import GoButton from './GoButton';
 
 function SearchPanel(props){
 
-    const optionsForSelectOne = [{"identifier": "bcn", "text":"Barcelona"}, {"identifier": "mad", "text":"Madrid"}];
-    const optionsForSelectTwo = [{"identifier": "ms", "text":"Music"}, {"identifier": "sp", "text":"Sports"}, {"identifier": "at", "text":"Art & theater"}, {"identifier": "ot", "text":"Others"}];
+    const contentForSelect_One = [{"identifier": "bcn", "text":"Barcelona"}, {"identifier": "mad", "text":"Madrid"}];
+    const contentForSelect_Two = [{"identifier": "ms", "text":"Music"}, {"identifier": "sp", "text":"Sports"}, {"identifier": "at", "text":"Art & theater"}, {"identifier": "ot", "text":"Others"}];
 
 	return (
 		<section className="container-fluid searchbar">
             <div className="row">
-            	<SelectButton textButton={'City'} dataForOptions={optionsForSelectOne} />
-            	<SelectButton textButton={'What?'} dataForOptions={optionsForSelectTwo} />
+            	<SelectButton textButton={'City'} dataForComponent={contentForSelect_One} />
+            	<SelectButton textButton={'What?'} dataForComponent={contentForSelect_Two} />
             	<InputButton />
             	<GoButton />
             </div>
