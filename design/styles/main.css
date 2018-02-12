@@ -30,6 +30,7 @@ h1{
 h2{
   color: black; 
   margin-top: 50px;
+  padding: 20px;
 }
 
 .go-text{
@@ -155,14 +156,29 @@ ul{
 .front {
 	z-index: 2;
     transform: rotateY(0deg);
-    
 }
 
 /* back, initially hidden pane */
 .back {
     transform: rotateY(180deg);
-    
+}
+/* FLIP END */
+
+.results-top, .results-middle, .results-bottom{
+  display: block;
+}
+
+.results-top{
+  font-weight: bolder;
+}
+
+.pointer {cursor: pointer;}
+
+.event-box{
+  padding-bottom: 0;
 }
 
 
-/* FLIP END */
+.event-box p{
+  margin-bottom: 4px;
+}
