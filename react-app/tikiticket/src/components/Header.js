@@ -1,12 +1,18 @@
 import React from 'react';
 
-function Header(props){
+function Header(props) {
 	return (
 		<header className="container-fluid d-none d-sm-block">
-			<h1 className="d-none d-lg-block">Tiki Ticket</h1>
-			<h3 className="d-none d-lg-block">Tiki is the ancient
-				<br/>event finder
-			</h3>
+			<div className="row">
+				<div className="d-none d-sm-block col-lg-9">
+					<h1>Tiki Ticket</h1>
+				</div>
+				<div className="d-none d-lg-block col-lg-3">
+					<h3>Tiki is the ancient
+					<br />event finder
+					</h3>
+				</div>
+			</div>
 		</header>
 	);
 }
