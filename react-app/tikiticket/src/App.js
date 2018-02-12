@@ -17,7 +17,7 @@ import MainPanel from './components/MainPanel';
  * 				InputButton
  * 		  		GoButton
  *       	MainPanel
- *       		ColumnPanel
+ *       		ColumnsPanel
  *       		EventList
  *       			EventBox
  *       		 	Modal

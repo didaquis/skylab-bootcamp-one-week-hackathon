@@ -7,11 +7,13 @@ function SelectButton(props){
 					{props.textButton}
 			</button>
 			<div className="dropdown-menu">
-				<a className="dropdown-item" href="#">Barcelona</a>
-				<a className="dropdown-item" href="#">Madrid</a>
-				<a className="dropdown-item" href="#">Valencia</a>
-				<a className="dropdown-item" href="#">Bilbao</a>
-				<a className="dropdown-item" href="#">Zaragoza</a>
+				{
+					props.dataForOptions.map(
+						(option) => {
+							return ( <a className="dropdown-item" key={option.identifier} href="#">{option.text}</a> )
+						}
+					)
+				}
 			</div>
 		</div>
 	);

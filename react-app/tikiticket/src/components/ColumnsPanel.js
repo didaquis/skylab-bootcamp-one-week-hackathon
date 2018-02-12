@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ColumnPanel(props){
+function ColumnsPanel(props){
 	return (
 		<div className="col-sm-4 d-none d-sm-block">
 			<div className="flip-container">
@@ -20,4 +20,4 @@ function ColumnPanel(props){
 	);
 }
 
-export default ColumnPanel;
+export default ColumnsPanel;

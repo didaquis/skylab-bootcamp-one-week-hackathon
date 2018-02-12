@@ -1,15 +1,15 @@
 import React from 'react';
 
-import ColumnPanel from './ColumnPanel';
+import ColumnsPanel from './ColumnsPanel';
 import EventList from './EventList';
 
 function MainPanel(props){
 	return (
 		<section className="container-fluid home">
 			<div className="row">
-				<ColumnPanel />
-				<ColumnPanel />
-				<ColumnPanel />
+				<ColumnsPanel />
+				<ColumnsPanel />
+				<ColumnsPanel />
 				<EventList />
 				<EventList />
 				<EventList />
