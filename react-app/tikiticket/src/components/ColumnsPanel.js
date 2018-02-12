@@ -5,13 +5,11 @@ function ColumnsPanel(props){
 		<div className="col-sm-4 d-none d-sm-block">
 			<div className="flip-container">
 				<div className="flipper">
-					<div className="front colimgpromo1 pointer">
+					<div className={`front ${props.dataForComponent[0]} pointer`}>
 					</div>
-					<div className="back colimgpromo1-back">
+					<div className={`back ${props.dataForComponent[1]}`}>
 						<h2>
-							Select your city and press <span className="go-text">GO</span> button to obtain lots of events around you!
-							<br /><br />
-							If you are interested in live music shows, select music on What list!
+							{props.dataForComponent[2]}
 						</h2>
 					</div>
 				</div>
