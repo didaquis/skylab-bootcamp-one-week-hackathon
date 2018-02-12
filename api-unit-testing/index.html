@@ -28,13 +28,48 @@
 		function handlerDataReceived(res){
 			/* Recorrer los resultados obtenidos */
 			for(let i = 0; i < res.length; i++){
-				console.log(res[i])
+				console.log('\n\n\n\n');
+				console.log('---------------------------------');
+				console.log('---------------------------------');
+				console.log('---------------------------------');
+				console.log('Todo el objeto:');
+				console.log(res[i]);
+				showEvent(res[i]);
 			}
 		}
 
 
+		function showEvent(event){
+			console.log('---------------------------------');
+			console.log(`event classifications genre name: ${event.classifications[0].genre.name}`)
+			console.log(`event classifications segment name: ${event.classifications[0].segment.name}`)
+			console.log(`event classifications subgenre name: ${event.classifications[0].subGenre.name}`)
+			console.log('---------------------------------');
+			console.log(`timezone: ${event.dates.timezone}`);
+			console.log(`start local date: ${event.dates.start.localDate}`);
+			console.log(`start local time: ${event.dates.start.localTime}`);
+			console.log(`date TBA: ${event.dates.start.dateTBA}`);
+			console.log(`date TBD: ${event.dates.start.dateTBD}`);
+			console.log(`datetime: ${event.dates.start.dateTime}`);
+			console.log(`noSpecificTime: ${event.dates.start.noSpecificTime}`);
+			console.log(`timeTBA: ${event.dates.start.timeTBA}`);
+			console.log(`date status code: ${event.dates.status.code}`);
+			console.log('---------------------------------');
+			console.log(`id: ${event.id}`);
+			console.log(`name: ${event.name}`);
+			console.log(`url: ${event.url}`);
+			console.log(`promoter name: ${event.promoter.name}`);
+			console.log('---------------------------------');
+			console.log(`priceRanges currency: ${event.priceRanges[0].currency}`);
+			console.log(`priceRanges min: ${event.priceRanges[0].min}`);
+			console.log(`priceRanges max: ${event.priceRanges[0].max}`);
+			console.log('---------------------------------');
+			viewImages(event.images);
+			console.log('\n\n\n\n');
+		}
+
 		// Ejemplo de búsqueda por ciudad española:
-		//ticketmasterApi.searchEventsOnASpanishCity('Barcelona').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+		ticketmasterApi.searchEventsOnASpanishCity('Barcelona').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
 
 
 		//Ejemplo de búsqueda por ciudad española y eventos de tipo musical:
@@ -50,7 +85,7 @@
 
 
 		//Ejemplo de búsqueda de los detalles de un evento:
-		ticketmasterApi.searchEventsDetails('Z598xZ2qZ6Akk').then(res => showDetailsOfEvent(res._embedded.events)).catch(error => {throw new Error(error)});
+		//ticketmasterApi.searchEventsDetails('Z598xZ2qZ6Akk').then(res => showDetailsOfEvent(res._embedded.events)).catch(error => {throw new Error(error)});
 
 
 		function viewImages(arrayOfObjectsWithImages){
