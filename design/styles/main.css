@@ -1,6 +1,6 @@
 @font-face{
   font-family: "bamboo";
-  src: url('../resources/bamboo.ttf')
+  src: url('../resources/bamboo.ttf');
 }
 
 html,body{
@@ -32,14 +32,8 @@ h1{
 }
 
 h2{
-  color: black; 
-  margin-top: 50px;
+  color: black;
   padding: 20px;
-}
-
-.go-text{
-  font-weight: bolder;
-  background: #F4B807;
 }
 
 h3{
@@ -53,6 +47,7 @@ h3{
 
 .searchbar{
 text-align: center;
+margin-bottom: 16px;
 }
 
 button,input{
@@ -60,13 +55,14 @@ button,input{
   height: 100%;
   font-size: 22px;
   font-weight: bolder !important;
-  border: 1px solid black !important; 
+  border: 1px solid black !important;
   margin-top: 5px;
 }
 
 input{
   padding-left: 8px;
   border-radius: 5px;
+  background-color: #FEEEBA;
 }
 .btn-warning {
   background-color: #ffeeba;
@@ -92,7 +88,7 @@ ul{
 
 
 .colimgpromo1{
-  background-image: url('../img/music.jpeg');  
+  background-image: url('../img/music.jpeg');
 }
 
 .colimgpromo1-back{
@@ -116,18 +112,17 @@ ul{
 }
 
 .colimgpromo1, .colimgpromo1-back, .colimgpromo2,.colimgpromo2-back,.colimgpromo3, .colimgpromo3-back{
-  margin-top:5px;
   height: 100%;
   background-position: center;
   background-size: cover;
   border-radius: 10px;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 
 /* FLIP START */
-
-
 .flip-container {
 	perspective: 1000px;
 }
@@ -170,12 +165,20 @@ ul{
 }
 /* FLIP END */
 
+.list-group {
+  padding-right: 0;
+}
+
 .results-top, .results-middle, .results-bottom{
   display: block;
 }
 
 .results-top{
   font-weight: bolder;
+}
+
+.results-bottom span{
+  margin-right: 4px;
 }
 
 .pointer {cursor: pointer;}
