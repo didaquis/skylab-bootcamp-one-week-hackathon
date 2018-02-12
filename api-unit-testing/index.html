@@ -50,9 +50,50 @@
 
 
 		//Ejemplo de búsqueda de los detalles de un evento:
-		ticketmasterApi.searchEventsDetails('Z598xZ2qZ6Akk').then(res => handlerDataReceived(res._embedded.events)).catch(error => {throw new Error(error)});
+		ticketmasterApi.searchEventsDetails('Z598xZ2qZ6Akk').then(res => showDetailsOfEvent(res._embedded.events)).catch(error => {throw new Error(error)});
 
 
+		function viewImages(arrayOfObjectsWithImages){
+			for(let i = 0; i < arrayOfObjectsWithImages.length; i++){
+				console.log(`\nData for image: ${i}`)
+				for(let item in arrayOfObjectsWithImages[i]){
+					console.log(`images: ${arrayOfObjectsWithImages[i][item]}`);
+				}
+			}
+		}
+
+		function showDetailsOfEvent(event){
+			console.log('\n\n\n\n');
+			console.log('---------------------------------');
+			console.log('---------------------------------');
+			console.log('---------------------------------');
+			console.log('Todo el objeto:');
+			console.log(event[0])
+			console.log('---------------------------------');
+			console.log(`Id: ${event[0]['id']}`);
+			console.log(`Name: ${event[0]['name']}`);
+			console.log(`url: ${event[0].url}`);
+			console.log('---------------------------------');
+			viewImages(event[0].images);
+			console.log('---------------------------------');
+			console.log(`timezone: ${event[0].dates.timezone}`);
+			console.log(`start local date: ${event[0].dates.start.localDate}`);
+			console.log(`start local time: ${event[0].dates.start.localTime}`);
+			console.log(`date TBA: ${event[0].dates.start.dateTBA}`);
+			console.log(`date TBD: ${event[0].dates.start.dateTBD}`);
+			console.log(`datetime: ${event[0].dates.start.dateTime}`);
+			console.log(`noSpecificTime: ${event[0].dates.start.noSpecificTime}`);
+			console.log(`timeTBA: ${event[0].dates.start.timeTBA}`);
+			console.log(`date status code: ${event[0].dates.status.code}`);
+			console.log('---------------------------------');
+			console.log(`priceRanges currency: ${event[0].priceRanges[0].currency}`);
+			console.log(`priceRanges min: ${event[0].priceRanges[0].min}`);
+			console.log(`priceRanges max: ${event[0].priceRanges[0].max}`);
+			console.log('---------------------------------');
+			console.log(`promoter name: ${event[0].promoter.name}`);
+			console.log(`seatmap static url: ${event[0].seatmap.staticUrl}`);
+			console.log('\n\n\n\n');
+		}
 	</script>
 </body>
 </html>
