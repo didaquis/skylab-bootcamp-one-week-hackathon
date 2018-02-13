@@ -50,15 +50,18 @@ text-align: center;
 margin-bottom: 16px;
 }
 
-button,input,select{
+input, select{
   margin-top: 5px;
   font-size: 22px;
   font-weight: bolder !important;
   border: 1px solid black !important;
+  
+}
+input[type="submit"], select{
   background-color: #ffeeba !important;
 }
 
-button:hover, input:hover, select:hover {
+input[type="submit"]:hover, select:hover {
   background-color: #d39e00 !important;
 }
 
