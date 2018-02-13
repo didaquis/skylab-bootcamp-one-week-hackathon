@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import SearchPanel from './components/SearchPanel';
 import MainPanel from './components/MainPanel';
-import ticketmasterApi from './utils/ticketmaster-api-0.4';
+import ticketmasterApi from './utils/ticketmaster-api-0.5';
 
 
 
