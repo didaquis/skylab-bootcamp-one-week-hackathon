@@ -11,7 +11,7 @@ class Modal extends React.Component {
 			event_url: '#',
 			event_startLocalDate: '',
 			event_startLocalTime: '',
-			event_priceRangesCurrency: 'euros',
+			event_priceRangesCurrency: '',
 			event_priceRangesMin: '',
 			event_priceRangesMax: '',
 			event_promoterName: ''
@@ -19,7 +19,9 @@ class Modal extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps){
-		ticketmasterApi.searchEventsDetails(nextProps.eventIdentifier).then(res => this.updateDataOnModal(res._embedded.events)).catch(error => {throw new Error(error)})
+		if(this.props.eventIdentifier !== nextProps.eventIdentifier){
+			ticketmasterApi.searchEventsDetails(nextProps.eventIdentifier).then(res => this.updateDataOnModal(res._embedded.events)).catch()
+		}
 	}
 
 	updateDataOnModal = (event) => {
@@ -29,14 +31,29 @@ class Modal extends React.Component {
 			event_url:event[0]['url'], 
 			event_startLocalDate:event[0].dates.start.localDate, 
 			event_startLocalTime:event[0].dates.start.localTime, 
-			event_priceRangesCurrency:event[0].priceRanges[0].currency, 
-			event_priceRangesMin:event[0].priceRanges[0].min, 
-			event_priceRangesMax:event[0].priceRanges[0].max, 
 			event_promoterName:event[0].promoter.name
 		} )
+		if(typeof event[0].priceRanges !== 'undefined'){
+			this.setState({
+				event_priceRangesCurrency:event[0].priceRanges[0].currency, 
+				event_priceRangesMin:event[0].priceRanges[0].min, 
+				event_priceRangesMax:event[0].priceRanges[0].max
+			})
+		}else{
+			this.setState({
+				event_priceRangesCurrency: '', 
+				event_priceRangesMin: '',
+				event_priceRangesMax: ''
+			})
+		}
 	}
 
 	render(){
+		let priceRange = '';
+		if(this.state.event_priceRangesCurrency !== ''){
+			priceRange = `${this.state.event_priceRangesMin} - ${this.state.event_priceRangesMax} ${this.state.event_priceRangesCurrency}`;
+		}
+
 		return (
 			<div className="modal fade" id="modalDetailedEvent" tabIndex="-1" role="dialog" aria-labelledby="modalDetailedEventTitle" aria-hidden="true">
 				<div className="modal-dialog modal-dialog-centered" role="document">
@@ -50,7 +67,7 @@ class Modal extends React.Component {
 							<p>{this.state.event_url}</p>
 							<p>{this.state.event_startLocalDate}</p>
 							<p>{this.state.event_startLocalTime}</p>
-							<p>{this.state.event_priceRangesMin} - {this.state.event_priceRangesMax} {this.state.event_priceRangesCurrency}</p>
+							<p>{priceRange}</p>
 							<p>{this.state.event_promoterName}</p>
 						</div>
 						<div className="modal-footer">
