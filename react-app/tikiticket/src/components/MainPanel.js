@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Modal from './Modal';
 import ColumnsPanel from './ColumnsPanel';
 import EventList from './EventList';
 
@@ -11,6 +12,7 @@ function MainPanel(props){
 	return (
 		<section className="container-fluid home">
 			<div className="row">
+				<Modal />
 				<ColumnsPanel dataForComponent={contentForColumn_One} />
 				<ColumnsPanel dataForComponent={contentForColumn_Two} />
 				<ColumnsPanel dataForComponent={contentForColumn_Three} />
