@@ -17,7 +17,7 @@ class SearchPanel extends React.Component {
 	}
 
 	submit = () => {
-		console.log('submit')
+		this.props.onSubmit(this.state.city, this.state.what,this.state.keyword)
 	}
 
 	fillCity = (value) => {
