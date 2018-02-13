@@ -38,6 +38,12 @@ Descripción de los directorios en el repositorio:
 * [Repositorio](https://github.com/didaquis/skylab-bootcamp-one-week-hackathon) del proyecto
 
 
+## Herramientas y recursos utilizados  
+
+* [React](https://github.com/facebook/create-react-app)
+* [Bootstrap](https://getbootstrap.com)
+
+
 ## Sprint plant  
 
 |    Fecha   |  Planificación  |
