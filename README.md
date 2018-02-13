@@ -1,14 +1,25 @@
-# Skylab Bootcamp => one-week-hackathon
+# Skylab Bootcamp: one-week-hackathon
 
-Tres alumnos de Skylab debemos crear un proyecto en menos de una semana.  
+## Objetivo  
+Tres alumnos de Skylab debemos crear un proyecto en React en menos de una semana. Debemos usar una API que será proporcionada por los profesores.  
 
-Requisitos:
+Los tres alumnos forman un equipo que ha sido designado por los profesores.
+
+
+Requisitos mínimos:
 * Realizar un diseño
 * Obtener datos mediante una API pública
 * Hacer el proyecto usando React
 * Implementar Unit Testing
 * Preparar la presentación y la defensa del proyecto
 * Subir a producción el proyecto
+* Usar Git & Git Flow (las releases se han de etiquetar debidamente)
+* Debemos usar kanban
+
+
+## Descripción del proyecto
+
+Mediante la API de TicketMaster, creamos un buscador de eventos que permita buscar por diferentes parámetros.
 
 
 
