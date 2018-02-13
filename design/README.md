@@ -2,4 +2,4 @@
 
 ## design
 
-Interfaz de la aplicación
+Esto es el boceto de la interfaz de la aplicación.

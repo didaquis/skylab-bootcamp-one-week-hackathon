@@ -1,8 +1,8 @@
-# Skylab Bootcamp => one-week-hackathon
+# Tiki Ticket
 
-## react-app Tiki Ticket
+Esta aplicación creada en **React** te permite buscar eventos en diferentes ciudades de España. Es posible filtrar por tipo de eventos e incluye un buscador.
 
-Aplicación React en la que unificamos todo el desarrollo
+Los datos de los eventos mostrados son proporcionados por [TicketMaster](https://www.ticketmaster.es).
 
 ## Instrucciones para ejecutar esta aplicación en tu equipo
 
