@@ -1,7 +1,7 @@
 /**
  * TicketMaster API client.
  * 
- * @version 0.4
+ * @version 0.5
  */
 let ticketmasterApi
 (() => {
@@ -30,7 +30,7 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpanishCity: (city) => {
-			return call(`events?city=${city}&countryCode=ES`).then(res => res)
+			return call(`events?city=${city}&countryCode=ES`)
 		},
 
 		/**
@@ -42,7 +42,7 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpanishCityAndSegmentName: (city, segmentName) => {
-			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}`).then(res => res)
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}`)
 		},
 
 		/**
@@ -54,7 +54,7 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpanishCityAndKeyword: (city, keyword) => {
-			return call(`events?city=${city}&countryCode=ES&keyword=${keyword}`).then(res => res)
+			return call(`events?city=${city}&countryCode=ES&keyword=${keyword}`)
 		},
 
 		/**
@@ -67,7 +67,7 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpanishCityAndSegmentNameAndKeyword: (city, segmentName, keyword) => {
-			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}`).then(res => res)
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}`)
 		},
 
 		/**
@@ -78,11 +78,9 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsDetails: (idOfEvent) => {
-			return call(`events?id=${idOfEvent}`).then(res => res)
+			return call(`events?id=${idOfEvent}`)
 		}
 	}
 
 	ticketmasterApi = inst
 })()
-
-export default ticketmasterApi;
