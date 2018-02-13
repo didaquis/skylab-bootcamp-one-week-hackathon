@@ -15,24 +15,22 @@ function EventList(props){
 	return (
 		<div className="col-sm-6 col-md-4">
 			<ul className="list-group">
-				<EventBox 
-					eventId={exampleOfEventIdentifier} 
-					eventTitle={exampleOfTitle} 
-					eventSegmentText={exampleOfSegmentTextOfEvent} 
+			{props.eventMap.map((event)=>{
+				// console.log(event.name)	
+				return (
+					<EventBox 
+					key={event.id} 
+					eventId={event.id} 
+					eventTitle={event.name} 
+					eventSegmentText={event.classifications[0].segment.name} 
 					eventSegmentIcon={exampleOfSegmentIconOfEvent} 
 					eventHashtags={exampleOfGenres} 
-					eventDate={exampleOfDate} 
+					eventDate={event.dates.start.localDate} 
 					onClick={props.onClickEvent} 
 				/>
-				<EventBox 
-					eventId={exampleOfEventIdentifier} 
-					eventTitle={exampleOfTitle} 
-					eventSegmentText={exampleOfSegmentTextOfEvent} 
-					eventSegmentIcon={exampleOfSegmentIconOfEvent} 
-					eventHashtags={exampleOfGenres} 
-					eventDate={exampleOfDate} 
-					onClick={props.onClickEvent} 
-				/>
+				)
+
+			})}
 			</ul>
 		</div>
 	);

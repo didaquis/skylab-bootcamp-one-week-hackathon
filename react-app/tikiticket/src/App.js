@@ -32,7 +32,8 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			searchPanel: false
+			searchPanel: false,
+			results: []
 		}
 	}
 
@@ -47,7 +48,7 @@ class App extends Component {
 
 	testResults = (res) => {
 		res.length? this.setState({searchPanel : true}) : null;
-		console.log(res)
+		this.setState({results:res})
 	}
 
 
@@ -56,7 +57,7 @@ class App extends Component {
 			<div>
 				<Header />
 				<SearchPanel onSubmit={this.getQueryParams} />
-				<MainPanel />
+				<MainPanel searchresults={this.state.results} displayThis={this.state.searchPanel}/>
 			</div>
 		);
 	}
