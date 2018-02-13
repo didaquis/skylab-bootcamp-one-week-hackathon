@@ -5,15 +5,17 @@ function EventBox (props){
 		<a className="pointer list-group-item list-group-item-action list-group-item-warning event-box" data-toggle="modal" data-target="#modalDetailedEvent" onClick={ () => {
 				props.onClick(props.eventId)
 			} }>
-			<p className="results-top">Natalia Lafourcade</p>
+			<p className="results-top">{props.eventTitle}</p>
 			<p className="results-bottom">
-				<span className="badge badge-dark">Music</span>
-				<span className="badge badge-dark">Alternative</span>
-				<span className="badge badge-dark">Alternative Rock</span>
+				{
+					props.eventHashtags.map(
+						(hashtag, index) => { return (<span key={index} className="badge badge-dark">{hashtag}</span>)}
+					)
+				}
 			</p>
 			<p className="results-middle">
-				<span className="badge badge-warning badge-pill" role="img" aria-label="Calendar">📅</span> 10-08-2018
-				<span className="badge badge-warning badge-pill float-right" role="img" aria-label="Music event">🎹</span>
+				<span className="badge badge-warning badge-pill" role="img" aria-label="Calendar">📅</span> {props.eventDate}
+				<span className="badge badge-warning badge-pill float-right" role="img" aria-label={props.eventSegmentText}>{props.eventSegmentIcon}</span>
 			</p>
 		</a>
 	);
