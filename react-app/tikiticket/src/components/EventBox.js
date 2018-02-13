@@ -1,8 +1,10 @@
 import React from 'react';
 
-function EventBox(props){
+function EventBox (props){
 	return (
-		<a className="pointer list-group-item list-group-item-action list-group-item-warning event-box" data-toggle="modal" data-target="#modalDetailedEvent">
+		<a className="pointer list-group-item list-group-item-action list-group-item-warning event-box" data-toggle="modal" data-target="#modalDetailedEvent" identifier={props.eventId} onClick={ () => {
+				console.log(props.eventId)
+			} }>
 			<p className="results-top">Natalia Lafourcade</p>
 			<p className="results-bottom">
 				<span className="badge badge-dark">Music</span>
