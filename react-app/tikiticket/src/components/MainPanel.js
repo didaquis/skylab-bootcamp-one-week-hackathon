@@ -48,7 +48,7 @@ class MainPanel extends React.Component{
 			return (
 				<section className="container-fluid home">
 					<div className="row">
-						{/* <Modal eventIdentifier={this.state.eventIdentifierForModal} /> */}
+						<Modal eventIdentifier={this.state.eventIdentifierForModal} />
 						<EventList onClickEvent={this.handlerOnClickEvent} eventMap={this.state.dataForEventList1}/>
 						<EventList onClickEvent={this.handlerOnClickEvent} eventMap={this.state.dataForEventList2}/>
 						<EventList onClickEvent={this.handlerOnClickEvent} eventMap={this.state.dataForEventList3}/>
