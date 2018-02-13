@@ -1,7 +1,6 @@
 import React from 'react';
 
 import EventBox from './EventBox';
-import Modal from './Modal';
 
 function EventList(props){
 	return (
