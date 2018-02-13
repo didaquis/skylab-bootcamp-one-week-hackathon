@@ -39,16 +39,21 @@ class App extends Component {
 
 	getQueryParams = (city, what, keyword) => {
 		keyword? 		
-			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res._embedded.events)).catch(error => { throw new Error(error)})
+			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res)).catch(error => { throw new Error(error)})
 		:
-			ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => this.testResults(res._embedded.events)).catch(error => { throw new Error(error)});
+			ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => {this.testResults(res)}).catch(error => { throw new Error(error)});
 
 		 
 	}
 
 	testResults = (res) => {
-		res.length? this.setState({searchPanel : true}) : null;
-		this.setState({results:res})
+		if (typeof(res._embedded) === "undefined") {
+			this.setState({searchPanel : false})
+			this.setState({results:[]})
+		} else {
+			this.setState({searchPanel : true})
+			this.setState({results:res._embedded.events})
+		}
 	}
 
 
