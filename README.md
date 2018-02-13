@@ -42,6 +42,7 @@ Descripción de los directorios en el repositorio:
 
 * [React](https://github.com/facebook/create-react-app)
 * [Bootstrap](https://getbootstrap.com)
+* [The Ticketmaster Developer Portal](https://developer.ticketmaster.com/api-explorer/v2/)
 
 
 ## Sprint plant  
@@ -51,11 +52,11 @@ Descripción de los directorios en el repositorio:
 | 2018-02-09 | Decidir API a utilizar y preparar el repositorio | 
 | 2018-02-10 | Creación de boceto de diseño | 
 | 2018-02-11 | Crear API client e implementar Unit Testing | 
-| 2018-02-12 | Reunión: Evaluar estado de proyecto. Generar proyecto en React e importar diseño | 
+| 2018-02-12 | Reunión: Evaluar estado del proyecto. Generar proyecto en React e importar diseño | 
 | 2018-02-13 | Aplicar la lógica en React: funciones básicas | 
-| 2018-02-14 | Aplicar la lógica en React: funciones avanzadas y resolución de problemas | 
+| 2018-02-14 | React: funciones avanzadas y resolución de problemas. Reunión: Evaluar estado del proyecto | 
 | 2018-02-15 | Bug testing. HotFixes. Documentación del proyecto. Deployment | 
-| 2018-02-16 | Presentación del proyecto | 
+| 2018-02-16 | Entraga y presentación del proyecto | 
 
 
 
