@@ -6,7 +6,6 @@ class Modal extends React.Component {
 		super(props)
 	
 		this.state = {
-			event_id: '',
 			event_name: '',
 			event_url: '#',
 			event_startLocalDate: '',
@@ -20,13 +19,12 @@ class Modal extends React.Component {
 
 	componentWillReceiveProps(nextProps){
 		if(this.props.eventIdentifier !== nextProps.eventIdentifier){
-			ticketmasterApi.searchEventsDetails(nextProps.eventIdentifier).then(res => this.updateDataOnModal(res._embedded.events)).catch()
+			ticketmasterApi.searchEventsDetails(nextProps.eventIdentifier).then(res => this.updateDataOnModal(res._embedded.events)).catch(error => {throw new Error(error)})
 		}
 	}
 
 	updateDataOnModal = (event) => {
 		this.setState( { 
-			event_id:event[0]['id'], 
 			event_name:event[0]['name'], 
 			event_url:event[0]['url'], 
 			event_startLocalDate:event[0].dates.start.localDate, 
@@ -49,7 +47,7 @@ class Modal extends React.Component {
 	}
 
 	render(){
-		let priceRange = '';
+		let priceRange = 'Not published yet';
 		if(this.state.event_priceRangesCurrency !== ''){
 			priceRange = `${this.state.event_priceRangesMin} - ${this.state.event_priceRangesMax} ${this.state.event_priceRangesCurrency}`;
 		}
@@ -62,13 +60,11 @@ class Modal extends React.Component {
 							<h5 className="modal-title" id="modalLongTitle">{this.state.event_name}</h5>
 						</div>
 						<div className="modal-body">
-							<p>{this.state.event_id}</p>
-							<p>{this.state.event_name}</p>
-							<p>{this.state.event_url}</p>
-							<p>{this.state.event_startLocalDate}</p>
-							<p>{this.state.event_startLocalTime}</p>
-							<p>{priceRange}</p>
-							<p>{this.state.event_promoterName}</p>
+							<p><strong>Date:</strong> {this.state.event_startLocalDate}</p>
+							<p><strong>Hour:</strong> {this.state.event_startLocalTime}</p>
+							<p><strong>Price:</strong> {priceRange}</p>
+							<p><strong>Promoter:</strong> {this.state.event_promoterName}</p>
+							<p><strong>Tickets and information:</strong> <a href={this.state.event_url} target="_blank">TicketMaster</a></p>
 						</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>

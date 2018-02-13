@@ -20,8 +20,8 @@ import ticketmasterApi from './utils/ticketmaster-api-0.5';
  * 		  		GoButton
  *       	MainPanel
  *       		Modal
-	*       		ColumnsPanel
-	*       		EventList
+ *       		ColumnsPanel
+ *       		EventList
  *       			EventBox
  * 
  */
