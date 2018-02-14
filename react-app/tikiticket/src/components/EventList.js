@@ -12,6 +12,19 @@ function EventList(props){
 	const exampleOfGenres = ['Alternative Rock', 'Music', 'Pop'];/* Useful just for development logic */
 	const exampleOfDate = '2018-11-07';/* Useful just for development logic */
 
+	
+	function assignIcon(event) {
+		if (event.classifications[0].segment.name === 'Music')
+				return '🎹'
+				else if (event.classifications[0].segment.name === 'Sports')
+				return '⚽'
+				else if (event.classifications[0].segment.name === 'Arts & Theatre')
+				return '🎭'
+				else return '✴'
+	}
+
+
+
 	return (
 		<div className="col-sm-6 col-md-4">
 			<ul className="list-group">
@@ -23,8 +36,8 @@ function EventList(props){
 					eventId={event.id} 
 					eventTitle={event.name} 
 					eventSegmentText={event.classifications[0].segment.name} 
-					eventSegmentIcon={exampleOfSegmentIconOfEvent} 
-					eventHashtags={exampleOfGenres} 
+					eventSegmentIcon={assignIcon(event)} 
+					eventHashtags={[event.classifications[0].genre.name, event.classifications[0].subGenre.name]} 
 					eventDate={event.dates.start.localDate} 
 					onClick={props.onClickEvent} 
 				/>
