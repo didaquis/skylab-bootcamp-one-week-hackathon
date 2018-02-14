@@ -5,7 +5,6 @@
  */
 let ticketmasterApi
 (() => {
-	'use strict'
 
 	/**
 	 * Make a request to TicketMaster DISCOVERY API 2.0
