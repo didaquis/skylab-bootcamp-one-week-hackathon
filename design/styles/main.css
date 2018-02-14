@@ -13,25 +13,31 @@ body {
 }
 
 header{
-  border-top: 15px;
-  border-left: 9px;
-  border-style: solid;
-  border-color: rgba(17,17,17,0.7);
+  border-top: solid 10px rgba(17,17,17,0.7);
+  background: linear-gradient(to bottom, rgba(17,17,17,0.7) 0%,rgba(17,17,17,0.7) 80%,rgba(17,17,17,0) 100%);
   height: 130px;
-  background-image: url('../img/tiki_logo.svg'), linear-gradient(to bottom, rgba(17,17,17,0.7) 0%,rgba(17,17,17,0.7) 80%,rgba(17,17,17,0) 100%);
-  background-position: left;
-  background-repeat: no-repeat;
   font-family: "bamboo";
+}
+.tiki {
+  background-image: url('../img/tiki_logo.svg');
+  background-position: 10px 0px;
+  background-repeat: no-repeat;
+}
+.title {
+  text-align: center;
 }
 h1{
   color:#d39e00;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  margin: 0;
   font-size: 85px;
   margin-top: -15px;
-  margin-left: 100px;
 }
-
+@media screen and (max-width: 568px) {
+  h1 {
+    font-size:55px;
+    margin: 0;
+  }
+}
 h2{
   color: black;
   padding: 20px;
