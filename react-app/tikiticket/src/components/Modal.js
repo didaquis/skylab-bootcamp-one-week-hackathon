@@ -34,7 +34,7 @@ class Modal extends React.Component {
 
 	updateDataOnModal = (event) => {
 		let imageUrl = 'img/default.png';
-		if(typeof event[0].images !== 'Undefined'){
+		if(typeof event[0].images !== 'undefined'){
 			imageUrl = this.filterImage(event[0].images)
 		}
 
