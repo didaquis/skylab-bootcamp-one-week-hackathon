@@ -15,7 +15,8 @@ class MainPanel extends React.Component{
 			contentForColumn_Three: ['colimgpromo3','colimgpromo3-back','To be, or not to be? This is the Tiki question. Sounds familiar? oh boy… You should go to the theater more often!'],
 			dataForEventList1: [],
 			dataForEventList2: [],
-			dataForEventList3: []
+			dataForEventList3: [],
+			noResults: false
 		}
 	}
 
@@ -25,6 +26,7 @@ class MainPanel extends React.Component{
 			let splittedArray = this.splitArrayInThreeSubArrays(nextProps.searchresults)
 		this.setState({dataForEventList1: splittedArray[0], dataForEventList2: splittedArray[1],dataForEventList3: splittedArray[2]})
 		}
+		else {this.state.noResults = true}
 	}
 
 
@@ -55,7 +57,19 @@ class MainPanel extends React.Component{
 					</div>
 				</section>
 			);
-		}else{
+		}
+
+		else if (this.state.noResults) {
+			return (
+				<section className="container-fluid home">
+					<div className="row">
+					<h1>Sorry... no results found ... try again</h1>
+					</div>
+				</section>
+			);
+		}			
+	
+		else{
 			return (
 				<section className="container-fluid home">
 					<div className="row">
