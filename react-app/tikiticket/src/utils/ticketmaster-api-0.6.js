@@ -1,11 +1,10 @@
 /**
  * TicketMaster API client.
  * 
- * @version 0.5
+ * @version 0.6
  */
 let ticketmasterApi
 (() => {
-	'use strict'
 
 	/**
 	 * Make a request to TicketMaster DISCOVERY API 2.0
@@ -17,7 +16,7 @@ let ticketmasterApi
 	function call(url) {
 		const token = "ECkj2ALmZaqNovI8BTDpOZ3NCuAUMQJc";
 		const baseUrl = "https://app.ticketmaster.com/discovery/v2/";
-		return fetch(`${baseUrl}${url}&apikey=${token}`)
+		return fetch(`${baseUrl}${url}&apikey=${token}&sort=date,asc&size=60`)
 			.then( res => { return res.json() } );
 	}
 
@@ -84,3 +83,5 @@ let ticketmasterApi
 
 	ticketmasterApi = inst
 })()
+
+export default ticketmasterApi;
