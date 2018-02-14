@@ -49,7 +49,7 @@ class SearchPanel extends React.Component {
 			];
 
 		return (
-			<section className="container-fluid mb-3">
+			<section className="container-fluid mt-3">
 				<form onSubmit={(e) => { e.preventDefault(); this.submit() }}>
 					<div className="form-group">
 						<div className="row">
