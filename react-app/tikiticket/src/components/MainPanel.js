@@ -29,11 +29,9 @@ class MainPanel extends React.Component {
 	}
 
 	splitArrayInThreeSubArrays = (arraySource) => {
-		let results = [[], [], []]
-		for (let i = 0; i < arraySource.length;) {
-			for (let j = 0; i < arraySource.length && j < 3; j++ , i++) {
-				results[j].push(arraySource[i])
-			}
+		let results = [[],[],[]]
+		for (let i=0; i<arraySource.length;i++) {
+			results[i%3].push(arraySource[i])
 		}
 		return results
 	}
