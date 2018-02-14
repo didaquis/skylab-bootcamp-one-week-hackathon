@@ -7,13 +7,13 @@ function EventList(props){
 	function assignIcon(event) {
 		if (event.classifications[0].segment.name === 'Music')
 				return '🎹'
-				else if (event.classifications[0].segment.name === 'Sports')
+		else if (event.classifications[0].segment.name === 'Sports')
 				return '⚽'
-				else if (event.classifications[0].segment.name === 'Arts & Theatre')
+		else if (event.classifications[0].segment.name === 'Arts & Theatre')
 				return '🎭'
-				else if (event.classifications[0].segment.name === 'Film')
+		else if (event.classifications[0].segment.name === 'Film')
 				return '🎞'
-				else return '✴'
+		else return '✴'
 	}
 
 	return (
