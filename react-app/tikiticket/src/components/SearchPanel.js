@@ -36,9 +36,6 @@ class SearchPanel extends React.Component {
 
 		const contentForSelect_One = [
 			{ "identifier": "bcn", "text": "Barcelona" }, 
-			{ "identifier": "trg", "text": "Tarragona" }, 
-			{ "identifier": "grn", "text": "Girona" }, 
-			{ "identifier": "lld", "text": "Lleida" }, 
 			{ "identifier": "mad", "text": "Madrid" }, 
 			{ "identifier": "blb", "text": "Bilbao" }, 
 			{ "identifier": "vlc", "text": "Valencia" }, 
