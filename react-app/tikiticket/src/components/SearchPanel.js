@@ -49,7 +49,7 @@ class SearchPanel extends React.Component {
 			{ "identifier": "sp", "text": "Sports" }, 
 			{ "identifier": "at", "text": "Art & theater" }, 
 			{ "identifier": "fl", "text": "Film" }, 
-			{ "identifier": "ot", "text": "Others" }
+			{ "identifier": "ml", "text": "Miscellaneous" }
 			];
 
 		return (
@@ -69,6 +69,5 @@ class SearchPanel extends React.Component {
 	}
 
 }
-
 
 export default SearchPanel;

@@ -14,7 +14,7 @@ let ticketmasterApi
 	 * @throws {String} If something go wrong
 	 */
 	function call(url) {
-		const token = "7elxdku9GGG5k8j0Xm8KWdANDgecHMV0";
+		const token = "ECkj2ALmZaqNovI8BTDpOZ3NCuAUMQJc";
 		const baseUrl = "https://app.ticketmaster.com/discovery/v2/";
 		return fetch(`${baseUrl}${url}&apikey=${token}`)
 			.then( res => { return res.json() } );
