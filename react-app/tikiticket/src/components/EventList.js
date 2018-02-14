@@ -11,6 +11,8 @@ function EventList(props){
 				return '⚽'
 				else if (event.classifications[0].segment.name === 'Arts & Theatre')
 				return '🎭'
+				else if (event.classifications[0].segment.name === 'Film')
+				return '🎞'
 				else return '✴'
 	}
 
