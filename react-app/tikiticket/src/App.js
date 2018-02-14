@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
-
 import Header from './components/Header';
 import SearchPanel from './components/SearchPanel';
 import MainPanel from './components/MainPanel';
 import ticketmasterApi from './utils/ticketmaster-api-0.5';
-
-
 
 /**
  * Diseño de componentes:
@@ -26,7 +23,6 @@ import ticketmasterApi from './utils/ticketmaster-api-0.5';
  * 
  */
 
-
 class App extends Component {
 
 	constructor() {
@@ -42,8 +38,6 @@ class App extends Component {
 			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res)).catch(error => { throw new Error(error)})
 		:
 			ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => {this.testResults(res)}).catch(error => { throw new Error(error)});
-
-		 
 	}
 
 	testResults = (res) => {
@@ -55,7 +49,6 @@ class App extends Component {
 			this.setState({results:res._embedded.events})
 		}
 	}
-
 
 	render() {
 		return (

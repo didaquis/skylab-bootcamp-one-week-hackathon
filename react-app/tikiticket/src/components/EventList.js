@@ -3,16 +3,16 @@ import React from 'react';
 import EventBox from './EventBox';
 
 function EventList(props){
-	
+
 	function assignIcon(event) {
 		if (event.classifications[0].segment.name === 'Music')
-				return '🎹'
+			return '🎹'
 		else if (event.classifications[0].segment.name === 'Sports')
-				return '⚽'
+			return '⚽'
 		else if (event.classifications[0].segment.name === 'Arts & Theatre')
-				return '🎭'
+			return '🎭'
 		else if (event.classifications[0].segment.name === 'Film')
-				return '🎞'
+			return '🎞'
 		else return '✴'
 	}
 
@@ -20,7 +20,6 @@ function EventList(props){
 		<div className="col-sm-6 col-md-4">
 			<ul className="list-group">
 			{props.eventMap.map((event)=>{
-				// console.log(event.name)	
 				return (
 					<EventBox 
 					key={event.id} 
@@ -33,7 +32,6 @@ function EventList(props){
 					onClick={props.onClickEvent} 
 				/>
 				)
-
 			})}
 			</ul>
 		</div>
