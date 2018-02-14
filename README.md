@@ -36,6 +36,7 @@ Descripción de los directorios en el repositorio:
 
 * Gestión de tareas en [Trello](https://trello.com/b/jt3Bpx3M/tiki-ticket)
 * [Repositorio](https://github.com/didaquis/skylab-bootcamp-one-week-hackathon) del proyecto
+* [Presentación](https://sway.com/4t7i70eyy6cE7HZl)
 
 
 ## Herramientas y recursos utilizados  
@@ -46,7 +47,7 @@ Descripción de los directorios en el repositorio:
 * [The Ticketmaster Developer Portal](https://developer.ticketmaster.com/api-explorer/v2/)
 
 
-## Sprint plant  
+## Sprint plan  
 
 |    Fecha   |  Planificación  |
 |------------|-----------------|
