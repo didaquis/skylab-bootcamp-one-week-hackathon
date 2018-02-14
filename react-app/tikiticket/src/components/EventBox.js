@@ -9,7 +9,7 @@ function EventBox (props){
 			<p className="results-bottom">
 				{
 					props.eventHashtags.map(
-						(hashtag, index) => { return (<span key={index} className="badge badge-dark">{hashtag}</span>)}
+						(hashtag, index) => { if(hashtag !== 'Undefined'){return (<span key={index} className="badge badge-dark">{hashtag}</span>)}}
 					)
 				}
 			</p>
