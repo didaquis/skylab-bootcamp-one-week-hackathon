@@ -26,7 +26,7 @@ class MainPanel extends React.Component{
 			let splittedArray = this.splitArrayInThreeSubArrays(nextProps.searchresults)
 		this.setState({dataForEventList1: splittedArray[0], dataForEventList2: splittedArray[1],dataForEventList3: splittedArray[2]})
 		}
-		else {this.state.noResults = true}
+		else {this.setState( {noResults: true})}
 	}
 
 
