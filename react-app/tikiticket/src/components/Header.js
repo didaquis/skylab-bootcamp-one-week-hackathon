@@ -8,7 +8,7 @@ function Header(props) {
 					<h1>Tiki Ticket</h1>
 				</div>
 				<div className="d-none d-lg-block col-lg-3">
-					<h3>Tiki is the ancient
+					<h3>The ancient
 					<br />event finder
 					</h3>
 				</div>

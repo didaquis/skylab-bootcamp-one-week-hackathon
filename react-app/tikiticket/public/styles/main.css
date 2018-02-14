@@ -9,19 +9,22 @@ html,body{
   height: 100%;
 }
 body {
-  background-image: url('../img/tiki_patern_3.jpg');
+  background-image: url('../img/tiki_patern_4.jpg');
 }
 
 header{
-  border-top:solid 5px rgba(17,17,17,0.7);
-  height: 120px;
+  border-top: 15px;
+  border-left: 9px;
+  border-style: solid;
+  border-color: rgba(17,17,17,0.7);
+  height: 130px;
   background-image: url('../img/tiki_logo.svg'), linear-gradient(to bottom, rgba(17,17,17,0.7) 0%,rgba(17,17,17,0.7) 80%,rgba(17,17,17,0) 100%);
   background-position: left;
   background-repeat: no-repeat;
   font-family: "bamboo";
 }
 h1{
-  color: #6af630;
+  color:#d39e00;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin: 0;
   font-size: 85px;
@@ -38,7 +41,7 @@ h3{
   padding: 1%;
   float: right;
   font-weight: bolder;
-  color: #6af630;
+  color: #d39e00;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin-top: 14px;
 }
