@@ -61,7 +61,7 @@ class Modal extends React.Component {
 						</div>
 						<div className="modal-body">
 							<p><strong>Date:</strong> {this.state.event_startLocalDate}</p>
-							<p><strong>Hour:</strong> {this.state.event_startLocalTime}</p>
+							<p><strong>Time:</strong> {this.state.event_startLocalTime}</p>
 							<p><strong>Price:</strong> {priceRange}</p>
 							<p><strong>Promoter:</strong> {this.state.event_promoterName}</p>
 							<p><strong>Tickets and information:</strong> <a href={this.state.event_url} target="_blank">TicketMaster</a></p>
