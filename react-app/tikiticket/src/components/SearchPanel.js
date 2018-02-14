@@ -34,8 +34,23 @@ class SearchPanel extends React.Component {
 
 	render() {
 
-		const contentForSelect_One = [{ "identifier": "bcn", "text": "Barcelona" }, { "identifier": "mad", "text": "Madrid" }];
-		const contentForSelect_Two = [{ "identifier": "ms", "text": "Music" }, { "identifier": "sp", "text": "Sports" }, { "identifier": "at", "text": "Art & theater" }, { "identifier": "ot", "text": "Others" }];
+		const contentForSelect_One = [
+			{ "identifier": "bcn", "text": "Barcelona" }, 
+			{ "identifier": "trg", "text": "Tarragona" }, 
+			{ "identifier": "grn", "text": "Girona" }, 
+			{ "identifier": "lld", "text": "Lleida" }, 
+			{ "identifier": "mad", "text": "Madrid" }, 
+			{ "identifier": "blb", "text": "Bilbao" }, 
+			{ "identifier": "vlc", "text": "Valencia" }, 
+			{ "identifier": "svl", "text": "Sevilla" }
+			];
+		const contentForSelect_Two = [
+			{ "identifier": "ms", "text": "Music" }, 
+			{ "identifier": "sp", "text": "Sports" }, 
+			{ "identifier": "at", "text": "Art & theater" }, 
+			{ "identifier": "fl", "text": "Film" }, 
+			{ "identifier": "ot", "text": "Others" }
+			];
 
 		return (
 			<section className="container-fluid searchbar">
