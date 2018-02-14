@@ -47,6 +47,7 @@ class App extends Component {
 	}
 
 	testResults = (res) => {
+		console.log(res)
 		if (typeof(res._embedded) === "undefined") {
 			this.setState({searchPanel : false})
 			this.setState({results:[]})
