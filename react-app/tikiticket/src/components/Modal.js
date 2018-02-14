@@ -4,7 +4,7 @@ import ticketmasterApi from '../utils/ticketmaster-api-0.5';
 class Modal extends React.Component {
 	constructor(props){
 		super(props)
-	
+
 		this.state = {
 			event_name: '',
 			event_url: '#',
@@ -13,7 +13,8 @@ class Modal extends React.Component {
 			event_priceRangesCurrency: '',
 			event_priceRangesMin: '',
 			event_priceRangesMax: '',
-			event_promoterName: ''
+			event_promoterName: '', 
+			event_imageUrl: 'img/default.png'
 		}
 	}
 
@@ -23,13 +24,27 @@ class Modal extends React.Component {
 		}
 	}
 
+	filterImage = (arrayOfImages) => {
+		for(let i = 0; i < arrayOfImages.length; i++){
+			if( (arrayOfImages[i].height > 200) && (arrayOfImages[i].height <= 600) ){
+				return arrayOfImages[i].url
+			}
+		}
+	}
+
 	updateDataOnModal = (event) => {
+		let imageUrl = 'img/default.png';
+		if(typeof event[0].images !== 'Undefined'){
+			imageUrl = this.filterImage(event[0].images)
+		}
+
 		this.setState( { 
 			event_name:event[0]['name'], 
 			event_url:event[0]['url'], 
 			event_startLocalDate:event[0].dates.start.localDate, 
 			event_startLocalTime:event[0].dates.start.localTime, 
-			event_promoterName:event[0].promoter.name
+			event_promoterName:event[0].promoter.name, 
+			event_imageUrl:imageUrl, 
 		} )
 		if(typeof event[0].priceRanges !== 'undefined'){
 			this.setState({
@@ -54,7 +69,7 @@ class Modal extends React.Component {
 
 		return (
 			<div className="modal fade" id="modalDetailedEvent" tabIndex="-1" role="dialog" aria-labelledby="modalDetailedEventTitle" aria-hidden="true">
-				<div className="modal-dialog modal-dialog-centered" role="document">
+				<div className="modal-dialog modal-dialog-centered modal-lg" role="document">
 					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="modalLongTitle">{this.state.event_name}</h5>
@@ -65,6 +80,7 @@ class Modal extends React.Component {
 							<p><strong>Price:</strong> {priceRange}</p>
 							<p><strong>Promoter:</strong> {this.state.event_promoterName}</p>
 							<p><strong>Tickets and information:</strong> <a href={this.state.event_url} target="_blank">TicketMaster</a></p>
+							<img src={this.state.event_imageUrl} className=" mw-100 p-2 mx-auto d-block rounded img-fluid" alt={this.state.event_name} />
 						</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
