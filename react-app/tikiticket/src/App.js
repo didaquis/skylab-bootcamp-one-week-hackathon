@@ -37,12 +37,14 @@ class App extends Component {
 	}
 
 	getQueryParams = (city, what, keyword) => {
-		keyword? 		
-			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res)).catch(error => { throw new Error(error)})
-		:
-			ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => {this.testResults(res)}).catch(error => { throw new Error(error)});
+		if( (this.state.lastQueryCity !== city) || (this.state.lastQueryWhat !== what) || (this.state.lastQueryKeyword !== keyword) ){
+			keyword? 
+				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res)).catch(error => { throw new Error(error)})
+			:
+				ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => {this.testResults(res)}).catch(error => { throw new Error(error)});
 
-		this.saveParamsLastQuery(city, what, keyword)
+			this.setState ({lastQueryCity: city, lastQueryWhat: what, lastQueryKeyword: keyword});
+		}
 	}
 
 	testResults = (res) => {
@@ -52,13 +54,8 @@ class App extends Component {
 		} 
 		else {
 			this.setState({searchPanel : true})
-			this.setState({results:res._embedded.events})
+			this.setState({results:res._embedded.events, page: 0})
 		}
-	}
-
-	saveParamsLastQuery = (city, what, keyword) => {
-		this.setState ({lastQueryCity: city, lastQueryWhat: what, lastQueryKeyword: keyword});
-
 	}
 
 	incrementPage = () => {
@@ -69,14 +66,12 @@ class App extends Component {
 			}
 		})
 
-			if(this.state.keyword === ''){
-				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
-			}
-			else{
-				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.lastQueryKeyword, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
-			} 
-			
+		if(this.state.keyword === ''){
+			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
+		}else{
+			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.lastQueryKeyword, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
 		}
+	}
 		
 	treatMoreResults = (res) => {
 		console.log('treatMoreResults')
