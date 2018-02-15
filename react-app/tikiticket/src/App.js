@@ -17,7 +17,6 @@ import ticketmasterApi from './utils/ticketmaster-api-0.6';
  * 		  		GoButton
  *       	MainPanel
  *       		Modal
- *       		ColumnsPanel
  *       		EventList
  *       			EventBox
  * 

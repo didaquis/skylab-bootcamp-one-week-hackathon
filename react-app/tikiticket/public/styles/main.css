@@ -207,17 +207,27 @@ li {
   font-size: 100%;
 }
 
-.no-results {
+.no-results, .wellcome {
   width: 100%;
   text-align: center;
+  background: linear-gradient(to bottom, rgba(17,17,17,0) 0%,rgba(17,17,17,0.7) 10%,rgba(17,17,17,0.7) 90%,rgba(17,17,17,0) 100%);
 }
+.no-results p, .wellcome p {
+  font-family: "bamboo";
+  width: 100%;
+  line-height: normal;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  padding: 30px 0px 40px !important;
+}
+
 .no-results p {
   max-width: 300px;
   margin: 0 auto;
-  background-color:rgba(17,17,17,0.7);
-  width: 100%;
   font-size: 70px;
-  color: white;
+}
+.wellcome p {
+  font-size: 7vmin;
   line-height: normal;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
