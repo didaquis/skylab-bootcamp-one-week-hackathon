@@ -49,13 +49,13 @@ class SearchPanel extends React.Component {
 			];
 
 		return (
-			<section className="container-fluid mt-3">
+			<section className="container-fluid search-panel">
 				<form onSubmit={(e) => { e.preventDefault(); this.submit() }}>
 					<div className="form-group">
 						<div className="row">
-							<SelectButton textButton={'City'} dataForComponent={contentForSelect_One} onChange={this.fillCity} />
-							<SelectButton textButton={'What?'} dataForComponent={contentForSelect_Two} onChange={this.fillWhat} />
-							<InputButton onChange={this.fillKeyword} />
+							<SelectButton idHtml={'city-select'} textButton={'City'} dataForComponent={contentForSelect_One} onChange={this.fillCity} textLabel={'Select your city'} requiredField={true} />
+							<SelectButton idHtml={'segment-select'} textButton={'What?'} dataForComponent={contentForSelect_Two} onChange={this.fillWhat} textLabel={'Select event type'} requiredField={true} />
+							<InputButton onChange={this.fillKeyword} textLabel={'Search by keyword'} requiredField={false} />
 							<GoButton />
 						</div>
 					</div>
