@@ -17,7 +17,7 @@ function EventList(props){
 	}
 
 	return (
-			<ul>
+			<ul className="mb-4">
 			{props.eventMap.map((event)=>{
 				return (
 					<EventBox 

@@ -183,7 +183,8 @@ li {
 
 .results-top{
   font-weight: bolder;
-  min-height: 48px;
+  height: 48px;
+  overflow: hidden;
 }
 
 .results-bottom span{
