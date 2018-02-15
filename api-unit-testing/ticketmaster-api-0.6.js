@@ -79,8 +79,38 @@ let ticketmasterApi
 		 */
 		searchEventsDetails: (idOfEvent) => {
 			return call(`events?id=${idOfEvent}`)
+		},
+
+
+		/**
+		 * Search events on a specific spanish city and specific segment name of events with page
+		 *
+		 * @param {String} city - City to search.
+		 * @param {String} segmentName - segment name of event to search.
+		 * @param {Integer} page - pagination of results
+		 * @returns {Promise<Response>} Data received from endpoint.
+		 * @throws {String} If something go wrong.
+		 */
+		searchEventsOnASpanishCityAndSegmentNameWithPage: (city, segmentName, page) => {
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&page=${page}`)
+		},
+
+		/**
+		 * Search events on a specific spanish city and keyword with page
+		 *
+		 * @param {String} city - City to search.
+		 * @param {String} segmentName - segment name of event to search.
+		 * @param {String} keyword - keyword to search.
+		 * @param {Integer} page - pagination of results
+		 * @returns {Promise<Response>} Data received from endpoint.
+		 * @throws {String} If something go wrong.
+		 */
+		searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage: (city, segmentName, keyword, page) => {
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}&page=${page}`)	
 		}
 	}
+
+	
 
 	ticketmasterApi = inst
 })()

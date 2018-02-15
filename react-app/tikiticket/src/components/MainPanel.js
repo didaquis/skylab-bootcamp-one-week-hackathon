@@ -68,17 +68,15 @@ class MainPanel extends React.Component {
 
 			if (this.getDocHeight() - 1 <= this.getScrollXY()[1] + window.innerHeight)
 			// {console.log('Sroll final de pag');}
-			{this.setState({moreResults : 1})}
+			{this.setState({moreResults : 1})
+			this.props.incrementPage()}
 		
 		}
 
 
 	render() {
 
-		if (this.state.moreResults>0){
-			return (<h1>Testing more results</h1>)
-		}
-		else if (this.props.displayThis) {
+		if (this.props.displayThis) {
 			return (
 				<section className="container-fluid home">
 					<div className="">

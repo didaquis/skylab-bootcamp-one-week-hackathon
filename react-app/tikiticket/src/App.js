@@ -28,7 +28,11 @@ class App extends Component {
 		super()
 		this.state = {
 			searchPanel: false,
-			results: []
+			results: [],
+			page: 0,
+			lastQueryCity: '',
+			lastQueryWhat: '',
+			lastQueryKeyword: ''
 		}
 	}
 
@@ -37,16 +41,54 @@ class App extends Component {
 			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res)).catch(error => { throw new Error(error)})
 		:
 			ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => {this.testResults(res)}).catch(error => { throw new Error(error)});
+
+		this.saveParamsLastQuery(city, what, keyword)
 	}
 
 	testResults = (res) => {
 		if (typeof(res._embedded) === "undefined") {
 			this.setState({searchPanel : false})
-			this.setState({results:[]})
-		} else {
+			this.setState({results:[], page: 0})
+		} 
+		else {
 			this.setState({searchPanel : true})
 			this.setState({results:res._embedded.events})
 		}
+	}
+
+	saveParamsLastQuery = (city, what, keyword) => {
+		this.setState ({lastQueryCity: city, lastQueryWhat: what, lastQueryKeyword: keyword});
+
+	}
+
+	incrementPage = () => {
+		console.log('incrementPage')
+		this.setState( prevState =>{
+			return {
+				page: prevState.page+1
+			}
+		})
+
+			if(this.state.keyword === ''){
+				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
+			}
+			else{
+				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.lastQueryKeyword, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
+			} 
+			
+		}
+		
+	treatMoreResults = (res) => {
+		console.log('treatMoreResults')
+		if (typeof(res._embedded) !== "undefined") {
+			this.setState( prevState =>{
+				return {
+					results: [...prevState.results, ...res._embedded.events]
+				}
+				
+			})
+		} 
+
 	}
 
 	render() {
@@ -54,7 +96,7 @@ class App extends Component {
 			<div>
 				<Header />
 				<SearchPanel onSubmit={this.getQueryParams} />
-				<MainPanel searchresults={this.state.results} displayThis={this.state.searchPanel}/>
+				<MainPanel searchresults={this.state.results} displayThis={this.state.searchPanel} incrementPage={this.incrementPage}/>
 			</div>
 		);
 	}
