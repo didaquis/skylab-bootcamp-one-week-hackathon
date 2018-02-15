@@ -10,6 +10,7 @@ html,body{
 }
 body {
   background-image: url('../img/tiki_patern_4.jpg');
+  background-repeat: repeat;
 }
 
 header{
@@ -77,12 +78,26 @@ input[type="submit"]:active {
   border-radius: 10px;
 }
 
-ul{
-  padding: 5%;
-  margin-right: auto;
-  margin-left: auto;
+ul {
+  /*
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  */
+  display: grid;
+  /* Display as a Grid */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* repeat = as many times as you can fit */
+  /* auto-fit = fit as many items on the line as possible, go bigger if you need to */
+  /*minmax = (min size, max size) = the minimum size the column should be is 200px, but if there's space then give them all 1fr of that width. */
+  grid-gap: 0px 24px;
+  /* column-gap: 24px; */
+  margin: 0;
+  padding: 0;
 }
-
+li {
+  list-style: none;
+}
 .description{
   height: 30%;
   margin-top: 10px;
@@ -188,7 +203,9 @@ ul{
 
 .event-box{
   padding-bottom: 0;
+  margin: 0 10px;
 }
+
 
 .event-box p{
   margin-bottom: 4px;
