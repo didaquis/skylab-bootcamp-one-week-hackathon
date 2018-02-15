@@ -1,6 +1,10 @@
 import React from 'react';
 
 function EventBox (props){
+	/* Remove duplicated values on array */
+	let removeDuplicationOfValuesOnArray = (arr) => [...new Set(arr)];
+	let eventHashtagsFiltered = removeDuplicationOfValuesOnArray(props.eventHashtags)
+
 	return (
 		<a className="pointer list-group-item list-group-item-action list-group-item-warning event-box" data-toggle="modal" data-target="#modalDetailedEvent" onClick={ () => {
 				props.onClick(props.eventId)
@@ -8,7 +12,7 @@ function EventBox (props){
 			<p className="results-top">{props.eventTitle}</p>
 			<p className="results-bottom">
 				{
-					props.eventHashtags.map(
+					eventHashtagsFiltered.map(
 						(hashtag, index) => { 
 							if(hashtag !== 'Undefined'){ 
 								return <span key={index} className="badge badge-dark">{hashtag}</span>
