@@ -43,7 +43,7 @@ describe('TicketMaster API based on Fetch API', () => {
 							done()
 						})
 						.catch(done)
-				}, 1200)
+				}, 1000)
 			}
 		)
 
@@ -69,7 +69,7 @@ describe('TicketMaster API based on Fetch API', () => {
 							done()
 						})
 						.catch(done)
-				}, 1200)
+				}, 1000)
 			}
 		)
 
@@ -95,7 +95,7 @@ describe('TicketMaster API based on Fetch API', () => {
 							done()
 						})
 						.catch(done)					
-				}, 1200)
+				}, 1000)
 			}
 		)
 
@@ -121,7 +121,7 @@ describe('TicketMaster API based on Fetch API', () => {
 							done()
 						})
 						.catch(done)
-				}, 1200)
+				}, 1000)
 			}
 		)
 
@@ -129,6 +129,55 @@ describe('TicketMaster API based on Fetch API', () => {
 			expect(ticket).not.toBeUndefined()
 
 			expect(ticket.length > 0).toBeTruthy()
+		})
+	})
+
+
+	describe('searchEventsOnASpanishCityAndSegmentNameWithPage', () => {
+		let ticket
+
+		beforeEach(done =>
+			{
+				setTimeout(() => {
+					target.searchEventsOnASpanishCityAndSegmentNameWithPage('Madrid', 'Music', 1)
+						.then(_events => {
+							ticket = _events._embedded.events
+
+							done()
+						})
+						.catch(done)
+				}, 1000)
+			}
+		)
+
+		it('should get results on search', () => {
+			expect(ticket).not.toBeUndefined()
+
+			expect(ticket.length > 0).toBeTruthy()
+		})
+	})
+
+
+	describe('searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage', () => {
+		let ticket
+
+		beforeEach(done =>
+			{
+				setTimeout(() => {
+					target.searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage('Madrid', 'Music', 'kkkkk',  3)
+						.then(_events => {
+							ticket = _events._embedded.events
+
+							done()
+						})
+						.catch(done)
+				}, 1000)
+			}
+		)
+
+		it('should get results on search', () => {
+			expect(ticket).toBeUndefined()
+
 		})
 	})
 
