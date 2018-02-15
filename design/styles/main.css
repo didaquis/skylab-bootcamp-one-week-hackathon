@@ -14,7 +14,8 @@ body {
 }
 
 header{
-  border-top: solid 10px rgba(17,17,17,0.7);
+  border-color: transparent !important;
+  border-top: solid 10px;
   background-color: rgba(17,17,17,0.7);
   height: 124px;
   font-family: "bamboo";
@@ -94,85 +95,6 @@ li {
   padding: 20px;
 }
 
-
-.colimgpromo1{
-  background-image: url('../img/music.jpeg');
-}
-
-.colimgpromo1-back{
-  background-image: url('../img/music_back.jpg');
-}
-
-.colimgpromo2{
-  background-image: url('../img/sports.jpeg');
-}
-
-.colimgpromo2-back{
-  background-image: url('../img/sports_back.jpg');
-}
-
-.colimgpromo3{
-  background-image: url('../img/theater.jpeg');
-}
-
-.colimgpromo3-back{
-  background-image: url('../img/theater_back.jpg');
-}
-
-.colimgpromo1, .colimgpromo1-back, .colimgpromo2,.colimgpromo2-back,.colimgpromo3, .colimgpromo3-back{
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-
-
-/* FLIP START */
-.flip-container {
-	perspective: 1000px;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container, .front, .back {
-	width: 100%;
-	height: 480px;
-}
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-    transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-    transform: rotateY(180deg);
-}
-/* FLIP END */
-
 .list-group {
   padding-right: 0;
 }
@@ -183,6 +105,8 @@ li {
 
 .results-top{
   font-weight: bolder;
+  height: 48px;
+  overflow: hidden;
 }
 
 .results-bottom span{
@@ -197,7 +121,6 @@ li {
   max-width: 514px;
 }
 
-
 .event-box p{
   margin-bottom: 4px;
 }
@@ -206,12 +129,12 @@ li {
   font-size: 100%;
 }
 
-.no-results, .wellcome {
+.no-results, .welcome {
   width: 100%;
   text-align: center;
   background: linear-gradient(to bottom, rgba(17,17,17,0) 0%,rgba(17,17,17,0.7) 10%,rgba(17,17,17,0.7) 90%,rgba(17,17,17,0) 100%);
 }
-.no-results p, .wellcome p {
+.no-results p, .welcome p {
   font-family: "bamboo";
   width: 100%;
   line-height: normal;
@@ -225,7 +148,7 @@ li {
   margin: 0 auto;
   font-size: 70px;
 }
-.wellcome p {
+.welcome p {
   font-size: 7vmin;
   line-height: normal;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -236,6 +159,7 @@ label {
   padding: 0 2px;
   margin-left: 1px;
 }
+
 .search-panel {
   background: linear-gradient(to bottom, rgba(17,17,17,0.7) 0%,rgba(17,17,17,0.7) 93%,rgba(17,17,17,0) 100%);
   color: white;
