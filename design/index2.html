@@ -25,37 +25,48 @@
 		</div>
 	</header>
 
-	<section class="container-fluid">
-		<form>
-			<div class="form-group">
-				<div class="row">
-					<div class="col-sm-3">
-						<select class="form-control form-control-lg" id="city-select">
-							<option>Barcelona</option>
-							<option>Madrid</option>
-							<option>Valencia</option>
-							<option>Bilbao</option>
-							<option>Zaragoza</option>
-						</select>
-					</div>
-					<div class="col-sm-3">
-						<select class="form-control form-control-lg" id="segment-select">
-							<option>Music</option>
-							<option>Sports</option>
-							<option>Art &amp; theater</option>
-							<option>Others</option>
-						</select>
-					</div>
-					<div class="col-sm-3">
-						<input class="form-control form-control-lg" type="text" placeholder="Search by keyword..." />
-					</div>
-					<div class="col-sm-3">
-						<input class="form-control form-control-lg" type="submit" value="GO">
+	<section class="container-fluid search-panel">
+			<form>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for=city-select class="text-nowrap font-weight-bold" >Select your city <span class="font-weight-bold text-danger">*</span></label>
+								<select class="form-control form-control-lg" id=city-select >
+									<option>Barcelona</option>
+									<option>Madrid</option>
+									<option>Valencia</option>
+									<option>Bilbao</option>
+									<option>Zaragoza</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for=segment-select class="text-nowrap font-weight-bold" >Select event type <span class="font-weight-bold text-danger">*</span></label>
+								<select class="form-control form-control-lg" id=segment-select >
+									<option>Music</option>
+									<option>Sports</option>
+									<option>Art &amp; theater</option>
+									<option>Film</option>
+									<option>Miscellanea</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="input-keyword" class="text-nowrap font-weight-bold">Search by keyword <span class="bg-darkfont-weight-bold text-danger"></span></label>
+								<input class="form-control form-control-lg" type="text" id="input-keyword" placeholder="Search by keyword..." autoFocus />
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<label for="go-button" class="text-nowrap font-weight-bold">Press button for search!</label>
+							<input class="form-control form-control-lg" id="go-button" type="submit" value="GO"/>
+						</div>
 					</div>
 				</div>
-			</div>
-		</form>
-	</section>
+			</form>
+		</section>
 
 	<section class="wellcome">
 			<p class="pb-3 text-warning">Ask the tiki what events can find <br> Select a city and an event type <br> You can use a keyword to filter the results</p>
