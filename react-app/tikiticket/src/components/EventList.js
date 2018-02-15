@@ -17,8 +17,7 @@ function EventList(props){
 	}
 
 	return (
-		<div className="col-sm-6 col-md-4">
-			<ul className="list-group">
+			<ul>
 			{props.eventMap.map((event)=>{
 				return (
 					<EventBox 
@@ -34,7 +33,6 @@ function EventList(props){
 				)
 			})}
 			</ul>
-		</div>
 	);
 }
 

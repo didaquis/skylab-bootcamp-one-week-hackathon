@@ -35,7 +35,7 @@ class MainPanel extends React.Component {
 		if (this.props.displayThis) {
 			return (
 				<section className="container-fluid home">
-					<div className="row">
+					<div className="">
 						<Modal eventIdentifier={this.state.eventIdentifierForModal} />
 						<EventList onClickEvent={this.handlerOnClickEvent} eventMap={this.state.dataForEventList} />
 					</div>
