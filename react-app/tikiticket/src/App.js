@@ -59,22 +59,22 @@ class App extends Component {
 	}
 
 	incrementPage = () => {
-		console.log('incrementPage')
-		this.setState( prevState =>{
-			return {
-				page: prevState.page+1
-			}
-		})
+		if( (this.state.lastQueryCity !== '') && (this.state.lastQueryWhat !== '') && (this.state.results.length >= 20 ) ){
+			this.setState( prevState =>{
+				return {
+					page: prevState.page+1
+				}
+			})
 
-		if(this.state.keyword === ''){
-			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
-		}else{
-			ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.lastQueryKeyword, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
+			if(this.state.keyword === ''){
+				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
+			}else{
+				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage(this.state.lastQueryCity,this.state.lastQueryWhat, this.state.lastQueryKeyword, this.state.page).then(res => {this.treatMoreResults(res)}).catch(error => { throw new Error(error)});
+			}
 		}
 	}
 		
 	treatMoreResults = (res) => {
-		console.log('treatMoreResults')
 		if (typeof(res._embedded) !== "undefined") {
 			this.setState( prevState =>{
 				return {
