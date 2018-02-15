@@ -96,7 +96,6 @@ class MainPanel extends React.Component {
 			return (
 				<section className="wellcome">
 					<p className="pb-3 text-warning">Ask the tiki what events can find <br /> Select a city and an event type <br /> You can use a keyword to filter the results</p>
-					<Modal eventIdentifier={this.state.eventIdentifierForModal} />
 				</section>	
 			);
 		}
