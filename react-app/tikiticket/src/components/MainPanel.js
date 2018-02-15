@@ -45,7 +45,7 @@ class MainPanel extends React.Component {
 			}
 		} else {
 			return (
-				<section className="wellcome">
+				<section className="welcome">
 					<p className="pb-3 text-warning">Ask the tiki what events can find <br /> Select a city and an event type <br /> You can use a keyword to filter the results</p>
 					<Modal eventIdentifier={this.state.eventIdentifierForModal} />
 				</section>	
