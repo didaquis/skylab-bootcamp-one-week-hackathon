@@ -1,7 +1,7 @@
 /**
  * TicketMaster API client.
  * 
- * @version 0.6
+ * @version 0.7
  */
 let ticketmasterApi
 (() => {
@@ -80,7 +80,6 @@ let ticketmasterApi
 			return call(`events?id=${idOfEvent}`)
 		},
 
-
 		/**
 		 * Search events on a specific spanish city and specific segment name of events with page
 		 *
@@ -94,7 +93,6 @@ let ticketmasterApi
 			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&page=${page}`)
 		},
 
-
 		/**
 		 * Search events on a specific spanish city and keyword with page
 		 *
@@ -106,12 +104,10 @@ let ticketmasterApi
 		 * @throws {String} If something go wrong.
 		 */
 		searchEventsOnASpanishCityAndSegmentNameAndKeywordWithPage: (city, segmentName, keyword, page) => {
-			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}&page=${page}`)	
+			return call(`events?city=${city}&countryCode=ES&segmentName=${segmentName}&keyword=${keyword}&page=${page}`)
 		}
 	
 	}
-
-	
 
 	ticketmasterApi = inst
 })()

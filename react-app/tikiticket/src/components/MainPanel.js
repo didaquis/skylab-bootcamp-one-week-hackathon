@@ -48,7 +48,7 @@ class MainPanel extends React.Component {
 		
 		getScrollXY = () => {
 			var scrOfX = 0, scrOfY = 0;
-			if( typeof( window.pageYOffset ) == 'number' ) {
+			if( typeof( window.pageYOffset ) === 'number' ) {
 				//Netscape compliant
 				scrOfY = window.pageYOffset;
 				scrOfX = window.pageXOffset;
