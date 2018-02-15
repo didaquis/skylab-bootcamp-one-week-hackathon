@@ -16,7 +16,8 @@ class MainPanel extends React.Component {
 			dataForEventList1: [],
 			dataForEventList2: [],
 			dataForEventList3: [],
-			noResults: false
+			noResults: false,
+			noResultsCounter:0
 		}
 	}
 
@@ -25,15 +26,13 @@ class MainPanel extends React.Component {
 			let splittedArray = this.splitArrayInThreeSubArrays(nextProps.searchresults)
 			this.setState({ dataForEventList1: splittedArray[0], dataForEventList2: splittedArray[1], dataForEventList3: splittedArray[2] })
 		}
-		else {this.setState( {noResults: true})}
+		else {this.setState( {noResults: true,noResultsCounter: this.state.noResultsCounter+0.5})}
 	}
 
 	splitArrayInThreeSubArrays = (arraySource) => {
-		let results = [[], [], []]
-		for (let i = 0; i < arraySource.length;) {
-			for (let j = 0; i < arraySource.length && j < 3; j++ , i++) {
-				results[j].push(arraySource[i])
-			}
+		let results = [[],[],[]]
+		for (let i=0; i<arraySource.length;i++) {
+			results[i%3].push(arraySource[i])
 		}
 		return results
 	}
@@ -56,9 +55,11 @@ class MainPanel extends React.Component {
 				</section>
 			);
 		} else if (this.state.noResults) {
-			return (
-				<div className="no-results mt-5"><p>The Tiki found nothing</p></div>
-			);
+			if (this.state.noResultsCounter%2) {
+				return <div className="no-results mt-5"><p className="pb-3">The Tiki found nothing</p></div>
+			} else {
+				return <div className="no-results mt-5"><p className="pb-3 text-warning">The Tiki found nothing</p></div>
+			}
 		} else {
 			return (
 				<section className="container-fluid home">
