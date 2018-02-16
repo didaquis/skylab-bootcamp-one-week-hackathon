@@ -34,7 +34,6 @@ class MainPanel extends React.Component {
 		window.removeEventListener('scroll', this.handleScroll);
 	}
 
-
 	getDocHeight= () => {
 		var D = document;
 		return Math.max(
@@ -42,33 +41,32 @@ class MainPanel extends React.Component {
 			D.body.offsetHeight, D.documentElement.offsetHeight,
 			D.body.clientHeight, D.documentElement.clientHeight
 		)
-		}
+	}
 		
-		getScrollXY = () => {
-			var scrOfX = 0, scrOfY = 0;
-			if( typeof( window.pageYOffset ) === 'number' ) {
-				//Netscape compliant
-				scrOfY = window.pageYOffset;
-				scrOfX = window.pageXOffset;
-			} else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
-				//DOM compliant
-				scrOfY = document.body.scrollTop;
-				scrOfX = document.body.scrollLeft;
-			} else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
-				//IE6 standards compliant mode
-				scrOfY = document.documentElement.scrollTop;
-				scrOfX = document.documentElement.scrollLeft;
-			}
-			return [ scrOfX, scrOfY ];
-			}
-
-		handleScroll = (event) => {
-			if (this.getDocHeight() - 1 <= this.getScrollXY()[1] + window.innerHeight){
-				// this.setState({moreResults : 1})
-				this.props.incrementPage()
-			}
+	getScrollXY = () => {
+		var scrOfX = 0, scrOfY = 0;
+		if( typeof( window.pageYOffset ) === 'number' ) {
+			//Netscape compliant
+			scrOfY = window.pageYOffset;
+			scrOfX = window.pageXOffset;
+		} else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+			//DOM compliant
+			scrOfY = document.body.scrollTop;
+			scrOfX = document.body.scrollLeft;
+		} else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+			//IE6 standards compliant mode
+			scrOfY = document.documentElement.scrollTop;
+			scrOfX = document.documentElement.scrollLeft;
 		}
+		return [ scrOfX, scrOfY ];
+	}
 
+	handleScroll = (event) => {
+		if (this.getDocHeight() - 1 <= this.getScrollXY()[1] + window.innerHeight){
+			// this.setState({moreResults : 1})
+			this.props.incrementPage()
+		}
+	}
 
 	render() {
 		if (this.props.displayThis) {
