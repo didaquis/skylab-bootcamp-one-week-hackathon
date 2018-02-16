@@ -1,5 +1,5 @@
 import React from 'react';
-import ticketmasterApi from '../utils/ticketmaster-api-0.6';
+import ticketmasterApi from '../utils/ticketmaster-api-0.7';
 
 class Modal extends React.Component {
 	constructor(props){

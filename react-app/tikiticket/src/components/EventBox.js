@@ -6,7 +6,8 @@ function EventBox (props){
 	let eventHashtagsFiltered = removeDuplicationOfValuesOnArray(props.eventHashtags)
 
 	return (
-		<a className="pointer list-group-item list-group-item-action list-group-item-warning event-box" data-toggle="modal" data-target="#modalDetailedEvent" onClick={ () => {
+		<li className="event-box">
+		<a className="pointer list-group-item list-group-item-action list-group-item-warning" data-toggle="modal" data-target="#modalDetailedEvent" onClick={ () => {
 				props.onClick(props.eventId)
 			} }>
 			<p className="results-top">{props.eventTitle}</p>
@@ -28,6 +29,7 @@ function EventBox (props){
 				<span className="badge badge-warning badge-pill float-right" role="img" aria-label={props.eventSegmentText}>{props.eventSegmentIcon}</span>
 			</p>
 		</a>
+		</li>
 	);
 }
 
