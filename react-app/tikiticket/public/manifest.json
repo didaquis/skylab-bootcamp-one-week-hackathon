@@ -1,6 +1,8 @@
 {
   "short_name": "TikiTicker",
   "name": "TikiTicket",
+  "description": "Tiki Ticket is an event finder. You can search by city, event type and keyword. Results are provided from TicketMaster API",
+  "version": "1.0.0",
   "icons": [
     {
       "src": "favicon.ico",
