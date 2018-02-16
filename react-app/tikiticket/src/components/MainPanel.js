@@ -10,8 +10,7 @@ class MainPanel extends React.Component {
 			eventIdentifierForModal: '',
 			dataForEventList: [],
 			noResults: false,
-			noResultsCounter:0,
-			moreResults: 0
+			noResultsCounter:0
 		}
 	}
 
@@ -66,7 +65,7 @@ class MainPanel extends React.Component {
 
 		handleScroll = (event) => {
 			if (this.getDocHeight() - 1 <= this.getScrollXY()[1] + window.innerHeight){
-				this.setState({moreResults : 1})
+				// this.setState({moreResults : 1})
 				this.props.incrementPage()
 			}
 		}
