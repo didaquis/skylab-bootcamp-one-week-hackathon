@@ -36,7 +36,7 @@ Descripción de los directorios en el repositorio:
 
 * Gestión de tareas en [Trello](https://trello.com/b/jt3Bpx3M/tiki-ticket)
 * [Repositorio](https://github.com/didaquis/skylab-bootcamp-one-week-hackathon) del proyecto
-* [Presentación](https://sway.com/4t7i70eyy6cE7HZl)
+* [Presentación](https://sway.com/4t7i70eyy6cE7HZl?ref=Link&loc=play)
 
 
 ## Herramientas y recursos utilizados  
