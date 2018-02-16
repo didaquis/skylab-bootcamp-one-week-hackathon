@@ -9,7 +9,8 @@ html,body{
   height: 100%;
 }
 body {
-  background-image: url('../img/tiki_patern_4.jpg');
+  background-image: url('../img/tiki_patern_5.jpg');
+  background-position: 0px 0px;
   background-repeat: repeat;
 }
 
