@@ -9,8 +9,7 @@ class MainPanel extends React.Component {
 		this.state = {
 			eventIdentifierForModal: '',
 			dataForEventList: [],
-			noResults: false,
-			noResultsCounter:0
+			noResults: false
 		}
 	}
 
@@ -18,7 +17,7 @@ class MainPanel extends React.Component {
 		if (nextProps.searchresults.length > 0) {
 			this.setState({ dataForEventList: nextProps.searchresults })
 		}
-		else {this.setState( {noResults: true,noResultsCounter: this.state.noResultsCounter+0.5})}
+		else {this.setState( {noResults: true})}
 	}
 
 	handlerOnClickEvent = (eventIdentifier) => {
@@ -83,7 +82,7 @@ class MainPanel extends React.Component {
 			);
 		} 
 		else if (this.state.noResults) {
-			if (this.state.noResultsCounter%2) {
+			if (this.props.noResultsCounter%2) {
 				return <div className="no-results mt-5"><p className="pb-3">The Tiki found nothing</p></div>
 			} else {
 				return <div className="no-results mt-5"><p className="pb-3 text-warning">The Tiki found nothing</p></div>

@@ -32,7 +32,8 @@ class App extends Component {
 			page: 0,
 			lastQueryCity: '',
 			lastQueryWhat: '',
-			lastQueryKeyword: ''
+			lastQueryKeyword: '',
+			noResultsCounter:0
 		}
 	}
 
@@ -44,6 +45,12 @@ class App extends Component {
 				ticketmasterApi.searchEventsOnASpanishCityAndSegmentName(city, what).then(res => {this.testResults(res)}).catch(error => { throw new Error(error)});
 
 			this.setState ({lastQueryCity: city, lastQueryWhat: what, lastQueryKeyword: keyword});
+		} else {
+			this.setState(prevState => {
+				return {
+					noResultsCounter: prevState.noResultsCounter+1
+				}
+			})
 		}
 	}
 
@@ -90,8 +97,8 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<SearchPanel onSubmit={this.getQueryParams} />
-				<MainPanel searchresults={this.state.results} displayThis={this.state.searchPanel} incrementPage={this.incrementPage}/>
+				<SearchPanel onSubmit={this.getQueryParams}/>
+				<MainPanel searchresults={this.state.results} displayThis={this.state.searchPanel} incrementPage={this.incrementPage} noResultsCounter={this.state.noResultsCounter}/>
 			</div>
 		);
 	}
