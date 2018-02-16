@@ -17,6 +17,11 @@ Requisitos mínimos:
 * Debemos usar kanban
 
 
+## Demo del proyecto 
+
+Demo: [Tiki Ticket](http://tiki-ticket.surge.sh)  
+
+
 ## Descripción del proyecto
 
 Mediante la API de TicketMaster, creamos un buscador de eventos que permite buscar por diferentes parámetros.
