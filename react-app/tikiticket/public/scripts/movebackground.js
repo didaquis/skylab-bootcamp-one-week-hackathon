@@ -40,10 +40,8 @@ document.addEventListener('keydown', function (e) {
 function activateCheats() {
     let i = 0;
     function moveBackground() {
-
         document.body.style.backgroundPosition = ++i + "px 0px";
+        if (i === 260) { clearInterval(background) }
     }
-    function stop() { clearInterval(background) }
     let background = setInterval(moveBackground, 10);
-    setTimeout(stop, 5000);
 }
