@@ -4,7 +4,7 @@ function Header(props) {
 	return (
 		<header className="container-fluid">
 			<div className="row ">
-				<div className="d-none d-sm-block col-lg-1 tiki"></div>
+				<div id="tikiFace" className="d-none d-sm-block col-lg-1 tiki"></div>
 				<div className="d-none d-sm-block col-lg-2"></div>
 				<div className="col-lg-6 title">
 					<h1>Tiki Ticket</h1>
