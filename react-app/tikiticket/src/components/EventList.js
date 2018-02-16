@@ -16,7 +16,7 @@ function EventList(props){
 		else return '✴'
 	}
 
-    function randomIntegerForAvoiCollision(){
+    function randomIntegerForAvoidCollision(){
     	let time = new Date().getTime();
     	let randomInteger = Math.floor(Math.random()*(9999-1+1)+1)
     	return `${time}_${randomInteger}`
@@ -27,7 +27,7 @@ function EventList(props){
 			{props.eventMap.map((event)=>{
 				return (
 					<EventBox 
-					key={`${event.id}_${randomIntegerForAvoiCollision()}`} 
+					key={`${event.id}_${randomIntegerForAvoidCollision()}`} 
 					eventId={event.id} 
 					eventTitle={event.name} 
 					eventSegmentText={event.classifications[0].segment.name} 
