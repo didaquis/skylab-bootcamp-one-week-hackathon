@@ -27,54 +27,113 @@
 	</header>
 
 	<section class="container-fluid search-panel">
-			<form>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="form-group">
-								<label for=city-select class="text-nowrap font-weight-bold" >Select your city <span class="font-weight-bold text-danger">*</span></label>
-								<select class="form-control form-control-lg" id=city-select >
-									<option>Barcelona</option>
-									<option>Madrid</option>
-									<option>Valencia</option>
-									<option>Bilbao</option>
-									<option>Zaragoza</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="form-group">
-								<label for=segment-select class="text-nowrap font-weight-bold" >Select event type <span class="font-weight-bold text-danger">*</span></label>
-								<select class="form-control form-control-lg" id=segment-select >
-									<option>Music</option>
-									<option>Sports</option>
-									<option>Art &amp; theater</option>
-									<option>Film</option>
-									<option>Miscellanea</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="form-group">
-								<label for="input-keyword" class="text-nowrap font-weight-bold">Search by keyword <span class="bg-darkfont-weight-bold text-danger"></span></label>
-								<input class="form-control form-control-lg" type="text" id="input-keyword" placeholder="Search by keyword..." autoFocus />
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<label for="go-button" class="text-nowrap font-weight-bold">Press button for search!</label>
-							<input class="form-control form-control-lg" id="go-button" type="submit" value="GO"/>
+		<form>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="form-group">
+							<label for=city-select class="text-nowrap font-weight-bold">Select your city
+								<span class="font-weight-bold text-danger">*</span>
+							</label>
+							<select class="form-control form-control-lg" id=city-select>
+								<option>Barcelona</option>
+								<option>Madrid</option>
+								<option>Valencia</option>
+								<option>Bilbao</option>
+								<option>Zaragoza</option>
+							</select>
 						</div>
 					</div>
+					<div class="col-sm-3">
+						<div class="form-group">
+							<label for=segment-select class="text-nowrap font-weight-bold">Select event type
+								<span class="font-weight-bold text-danger">*</span>
+							</label>
+							<select class="form-control form-control-lg" id=segment-select>
+								<option>Music</option>
+								<option>Sports</option>
+								<option>Art &amp; theater</option>
+								<option>Film</option>
+								<option>Miscellanea</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="form-group">
+							<label for="input-keyword" class="text-nowrap font-weight-bold">Search by keyword
+								<span class="bg-darkfont-weight-bold text-danger"></span>
+							</label>
+							<input class="form-control form-control-lg" type="text" id="input-keyword" placeholder="Search by keyword..." autoFocus />
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<label for="go-button" class="text-nowrap font-weight-bold">Press button for search!</label>
+						<input class="form-control form-control-lg" id="go-button" type="submit" value="GO" />
+					</div>
 				</div>
-			</form>
-		</section>
+			</div>
+		</form>
+	</section>
 
 	<section class="welcome">
-			<p class="pb-3 text-warning">Ask the tiki what events can find <br> Select a city and an event type <br> You can use a keyword to filter the results</p>
+		<p class="pb-3 text-warning">Ask the tiki what events can find
+			<br> Select a city and an event type
+			<br> You can use a keyword to filter the results</p>
 	</section>
 	<script src="vendor/jquery/3.3.1/jquery-3.3.1.slim.min.js"></script>
 	<script src="vendor/popper/1.12.9/popper.min.js"></script>
 	<script src="vendor/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script>
+		// a key map of allowed keys
+		var allowedKeys = {
+			37: 'left',
+			38: 'up',
+			39: 'right',
+			40: 'down',
+			65: 'a',
+			66: 'b'
+		};
+
+		// the 'official' Konami Code sequence
+		var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
+		// a variable to remember the 'position' the user has reached so far.
+		var konamiCodePosition = 0;
+
+		// add keydown event listener
+		document.addEventListener('keydown', function (e) {
+			// get the value of the key code from the key map
+			var key = allowedKeys[e.keyCode];
+			// get the value of the required key from the konami code
+			var requiredKey = konamiCode[konamiCodePosition];
+
+			// compare the key with the required key
+			if (key == requiredKey) {
+
+				// move to the next key in the konami code sequence
+				konamiCodePosition++;
+
+				// if the last key is reached, activate cheats
+				if (konamiCodePosition == konamiCode.length) {
+					activateCheats();
+					konamiCodePosition = 0;
+				}
+			} else {
+				konamiCodePosition = 0;
+			}
+		});
+
+		function activateCheats() {
+			let i = 0;
+			function moveBackground() {
+				
+				document.body.style.backgroundPosition  = ++i+"px 0px";
+			}
+			function stop() {clearInterval(background)}
+			let background = setInterval(moveBackground, 10);
+			setTimeout(stop, 5000);
+		}
+	</script>
 </body>
 
 </html>

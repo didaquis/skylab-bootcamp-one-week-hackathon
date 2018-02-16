@@ -37,7 +37,18 @@ class App extends Component {
 		}
 	}
 
+	easterEgg = (keyword) => {
+		let tikiFace = document.getElementById('tikiFace');
+		if(keyword.toLowerCase() === 'tiki'){
+			tikiFace.classList.add('animateTiki');
+		}else{
+			tikiFace.classList.remove('animateTiki');
+		}
+	}
+
 	getQueryParams = (city, what, keyword) => {
+		this.easterEgg(keyword);
+
 		if( (this.state.lastQueryCity !== city) || (this.state.lastQueryWhat !== what) || (this.state.lastQueryKeyword !== keyword) ){
 			keyword? 
 				ticketmasterApi.searchEventsOnASpanishCityAndSegmentNameAndKeyword(city, what, keyword).then(res => this.testResults(res)).catch(error => { throw new Error(error)})
