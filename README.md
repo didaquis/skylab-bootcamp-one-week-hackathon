@@ -16,6 +16,7 @@ Requisitos mínimos:
 * Usar Git & Git Flow (las releases se han de etiquetar debidamente)
 * Debemos usar kanban
 
+------------------
 
 # Tiki Ticket
 
@@ -34,6 +35,9 @@ Los datos de los eventos mostrados son proporcionados por [TicketMaster](https:/
 ## Instrucciones para subir la aplicación a un servidor
 
 * Si quieres ponerla en producción, ejecuta el comando `npm run build` y sube el contenido del directorio "build" al servidor.
+
+
+------------------
 
 # Información adicional  
 
